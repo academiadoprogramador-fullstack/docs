@@ -10,29 +10,17 @@ const config: Config = {
   staticDirectories: ["public", "static"],
   tagline: "",
   favicon: "img/logo.svg",
-
-  // Set the production url of your site here
-  url: "https://github.com",
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
+  url: "https://docs.academiadoprogramador.net",
   baseUrl: "/",
-  deploymentBranch: "gh-pages",
   trailingSlash: true,
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: "academiadoprogramador-fullstack", // Usually your GitHub org/user name.
-  projectName: "blog", // Usually your repo name.
-
   onBrokenLinks: "throw",
 
   markdown: {
     hooks: {
-      onBrokenMarkdownLinks: "warn",
+      onBrokenMarkdownLinks: "throw",
     },
   },
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
+
   i18n: {
     defaultLocale: "pt-BR",
     locales: ["pt-BR"],
@@ -44,27 +32,10 @@ const config: Config = {
       {
         docs: {
           sidebarPath: "./sidebars.ts",
-          path: "material",
-          routeBasePath: "material",
-
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
+          path: "docs",
+          routeBasePath: "/",
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ["rss", "atom"],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-          // Useful options to enforce blogging best practices
-          onInlineTags: "warn",
-          onInlineAuthors: "warn",
-          onUntruncatedBlogPosts: "warn",
-        },
+        blog: false,
         theme: {
           customCss: "./src/css/custom.css",
         },
@@ -74,9 +45,9 @@ const config: Config = {
 
   themeConfig: {
     colorMode: {
-      defaultMode: "dark", // define o dark mode como padrão
-      disableSwitch: false, // desativa o botão de troca de tema
-      respectPrefersColorScheme: false, // ignora a preferência do sistema
+      defaultMode: "dark",
+      disableSwitch: false,
+      respectPrefersColorScheme: true,
     },
 
     // Replace with your project's social card
