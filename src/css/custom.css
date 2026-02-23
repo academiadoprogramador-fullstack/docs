@@ -6,7 +6,8 @@
 
   --site-primary-hue-saturation: 1, 1%;
   --site-primary-hue-saturation-light: 167, 56%;
-  --ifm-font-size-base: 112.5%;
+  /* --ifm-font-size-base: 112.5%; */
+  --ifm-font-size-base: 100%;
   --ifm-font-family-base: system-ui, "Segoe UI", Tahoma, sans-serif;
 
   --doc-sidebar-width: 330px !important;
@@ -34,10 +35,6 @@
   --ifm-background-color: #0e1217;
 }
 
-[data-theme="light"] {
-  --ifm-navbar-link-color: #f0f8ff;
-}
-
 .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.1);
   display: block;
@@ -47,10 +44,6 @@
 
 html[data-theme="dark"] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
-}
-
-.header-github-link:hover {
-  /* opacity: 0.6; */
 }
 
 .header-github-link:before {
@@ -110,10 +103,6 @@ html[data-theme="dark"] .DocSearch {
     var(--ifm-color-emphasis-200) 0%,
     var(--ifm-color-emphasis-100) 100%
   );
-}
-
-.navbar {
-  background-color: #0e1217;
 }
 
 div[class^="announcementBar_"] {
@@ -314,7 +303,7 @@ img[src="/img/logo.png"] {
   --burger80: #7c3822;
   --burger90: #722f1b;
 
-  --ifm-container-width-xl: 1600px;
+  --ifm-container-width-xl: 1920px;
   --ifm-line-height-base: 1.333;
   /* a11y - needs upping to at least 1.5 */
 
@@ -333,7 +322,7 @@ img[src="/img/logo.png"] {
   /* ally - this needs removing and setting to 1.0625 or higher so headings are at least minimum sizes */
 
   /* font size calculated as ratio relative to h6 */
-  --dd-h1-font-size: 4rem;
+  --dd-h1-font-size: 2.5rem;
   --dd-h2-font-size: 1.5rem;
   --dd-h3-font-size: 1.25rem;
   --dd-h4-font-size: calc(var(--dd-h6-size) * var(--dd-h4-ratio));
@@ -415,7 +404,15 @@ article {
 
 .footer {
   text-align: center;
-  padding-top: 6rem;
+  padding-top: 2rem;
+}
+
+.pagination-nav {
+  margin-left: auto;
+  margin-right: auto;
+
+  margin-top: 2rem !important;
+  max-width: 85ch;
 }
 
 /* menu */
@@ -463,14 +460,13 @@ article {
 
 .footer__bottom,
 .footer__item {
-  padding: 8px 0;
+  padding: 2px 0;
   opacity: 0.64;
 }
 
 /* main adjustments */
 
 .main-wrapper {
-  padding-bottom: 15%;
   /* background-image: url('https://assets.website-files.com/5e0a5d9d743608d0f3ea6753/619650c123dedf5abe6feaa5_CTA%20Footer%20Circles.png');*/
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -613,7 +609,9 @@ details {
 }
 
 details:focus-within {
-  box-shadow: 0 0 0 4px #000, 0 0 0 6px #2cdce6;
+  box-shadow:
+    0 0 0 4px #000,
+    0 0 0 6px #2cdce6;
 }
 details > summary {
   list-style: none;
@@ -656,8 +654,8 @@ details > div > div {
 
 p {
   margin: 0;
-  padding-bottom: 10px;
 }
+
 p:last-child {
   padding: 0;
 }
@@ -689,15 +687,13 @@ p:last-child {
   text-align: center; /* Center the text */
   /*background: linear-gradient(90deg, #c029f0, #ff00d4a5); /* Gradient from purple to blue */
   -webkit-background-clip: text; /* Clip gradient to text */
+  background-clip: text; /* Clip gradient to text */
   /* -webkit-text-fill-color: transparent; /* Make the text itself transparent */
   /*text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
   margin-top: 2rem;
-  transition: transform 0.3s ease, text-shadow 0.3s ease; /* Smooth transition */
-}
-
-.hero__title:hover {
-  /*text-shadow: 4px 4px 15px rgba(192, 41, 240, 0.8); /* Stronger shadow on hover */
-  /*transform: scale(1.05); /* Slight scale effect on hover */
+  transition:
+    transform 0.3s ease,
+    text-shadow 0.3s ease; /* Smooth transition */
 }
 
 @media screen and (max-width: 768px) {

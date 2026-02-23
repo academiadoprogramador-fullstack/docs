@@ -1,6 +1,6 @@
-import type {ReactNode} from 'react';
-import { Redirect } from '@docusaurus/router';
+import type { ReactNode } from "react";
+import { Redirect } from "@docusaurus/router";
 
 export default function Home(): ReactNode {
-  return <Redirect to="/blog/docs/intro" />;
+  return <Redirect to="/material/inicio" />;
 }

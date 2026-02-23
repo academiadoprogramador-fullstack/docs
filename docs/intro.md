@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Bem-vindos
+# Início
 
 Sejam bem-vindos ao repositório de materiais do curso da **Academia do Programador 2025**! Neste site, você terá acesso ao nosso conteúdo de forma organizada e acessível.
 

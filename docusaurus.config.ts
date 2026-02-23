@@ -1,149 +1,121 @@
-import { themes as prismThemes } from 'prism-react-renderer';
-import type { Config } from '@docusaurus/types';
-import type * as Preset from '@docusaurus/preset-classic';
+import { themes as prismThemes } from "prism-react-renderer";
+
+import type { Config } from "@docusaurus/types";
+import type * as Preset from "@docusaurus/preset-classic";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Academia do Programador',
-  staticDirectories: ['public', 'static'],
-  tagline: '',
-  favicon: 'img/favicon.ico',
+  title: "Academia do Programador",
+  staticDirectories: ["public", "static"],
+  tagline: "",
+  favicon: "img/logo.svg",
 
   // Set the production url of your site here
-  url: 'https://github.com',
+  url: "https://github.com",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/blog/',
+  baseUrl: "/",
   deploymentBranch: "gh-pages",
   trailingSlash: true,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'academiadoprogramador-fullstack', // Usually your GitHub org/user name.
-  projectName: 'blog', // Usually your repo name.
+  organizationName: "academiadoprogramador-fullstack", // Usually your GitHub org/user name.
+  projectName: "blog", // Usually your repo name.
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: "throw",
 
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: "warn",
+    },
+  },
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: "pt-BR",
+    locales: ["pt-BR"],
   },
 
   presets: [
     [
-      'classic',
+      "classic",
       {
         docs: {
-          sidebarPath: './sidebars.ts',
+          sidebarPath: "./sidebars.ts",
+          path: "material",
+          routeBasePath: "material",
+
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
         },
         blog: {
           showReadingTime: true,
           feedOptions: {
-            type: ['rss', 'atom'],
+            type: ["rss", "atom"],
             xslt: true,
           },
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
           // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
+          onInlineTags: "warn",
+          onInlineAuthors: "warn",
+          onUntruncatedBlogPosts: "warn",
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: "./src/css/custom.css",
         },
       } satisfies Preset.Options,
     ],
   ],
 
   themeConfig: {
-    // Replace with your project's social card
     colorMode: {
-      defaultMode: 'dark', // define o dark mode como padrão
+      defaultMode: "dark", // define o dark mode como padrão
       disableSwitch: false, // desativa o botão de troca de tema
-      respectPrefersColorScheme: true // ignora a preferência do sistema
+      respectPrefersColorScheme: false, // ignora a preferência do sistema
     },
 
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: "img/docusaurus-social-card.jpg",
     navbar: {
-      title: 'Academia do Programador',
+      title: "Academia do Programador",
       logo: {
-        alt: 'Academia do Programador',
-        src: 'img/logo.svg',
+        alt: "Academia do Programador",
+        src: "img/logo.svg",
       },
-      items: [
-        // {
-        //   type: 'docSidebar',
-        //   sidebarId: 'tutorialSidebar',
-        //   position: 'left',
-        //   label: 'Tutorial',
-        // },
-        // { to: '/blog', label: 'Blog', position: 'left' },
-        // {
-        //   href: 'https://github.com/facebook/docusaurus',
-        //   label: 'GitHub',
-        //   position: 'right',
-        // },
-      ],
+      items: [],
+    },
+    sidebar: {
+      hideable: false,
+      autoCollapseCategories: false,
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       links: [
         {
-          title: 'Docs',
+          title: "Mais",
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/intro',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: "Website",
+              href: "https://academiadoprogramador.net",
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              label: "GitHub",
+              href: "https://github.com/academia-do-programador",
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Direitos Autorais © ${new Date().getFullYear()} - Academia do Programador. Criado com Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
-      additionalLanguages: ['csharp']
+      additionalLanguages: ["csharp"],
     },
   } satisfies Preset.ThemeConfig,
 };
