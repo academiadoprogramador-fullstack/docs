@@ -1,8 +1,9 @@
 ---
-sidebar_position: 1
+slug: /tutoriais/dotnet-sdk
+tags:
+  - Tutoriais
+  - SDK
 ---
-
-## Introdução
 
 O .NET SDK (Software Development Kit) é o conjunto de ferramentas que você instala na sua máquina para criar, compilar, testar e publicar aplicações .NET. Ele é diferente do .NET Runtime, que serve apenas para executar aplicações já compiladas.
 
@@ -14,7 +15,7 @@ O SDK é obrigatório na máquina de desenvolvimento e no ambiente de build (Git
 
 Para baixar e instalar a última versão do .NET SDK, siga o link para a [página oficial de download da Microsoft](https://dotnet.microsoft.com/pt-br/download) e baixe o instalador (disponível para Windows/MacOS/Linux). Siga as instruções do instalador e após isso, o SDK já deve estar disponível para uso no sistema.
 
-Para checar a instalação, em um emulador de terminal (CMD, PowerShell, zsh, Bash) digite:
+Para checar a instalação, em um emulador de terminal (Prompt de Comando, PowerShell, zsh, Bash) digite:
 
 ```sh
 dotnet --version
