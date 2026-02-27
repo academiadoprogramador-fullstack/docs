@@ -38,27 +38,24 @@ Para que a operação acima tenha sucesso, também precisamos levar em conta que
 ✅ Somar os dois números e exibir o resultado
 
 ```cs
-static void Main(string[] args)
-{
-	Console.WriteLine("-----------------------------------------");
-	Console.WriteLine("Calculadora Tabajara 2025");
-	Console.WriteLine("-----------------------------------------");
+Console.WriteLine("-----------------------------------------");
+Console.WriteLine("Calculadora Tabajara 2025");
+Console.WriteLine("-----------------------------------------");
 
-    Console.Write("Digite o primeiro número: ");
-    string strNumero1 = Console.ReadLine();
-    decimal primeiroNumero = Convert.ToDecimal(strNumero1);
+Console.Write("Digite o primeiro número: ");
+string strNumero1 = Console.ReadLine();
+decimal primeiroNumero = Convert.ToDecimal(strNumero1);
 
-    Console.Write("Digite o segundo número: ");
-    string strNumero2 = Console.ReadLine();
-    decimal segundoNumero = Convert.ToDecimal(strNumero2);
+Console.Write("Digite o segundo número: ");
+string strNumero2 = Console.ReadLine();
+decimal segundoNumero = Convert.ToDecimal(strNumero2);
 
-    decimal resultado = primeiroNumero + segundoNumero;
+decimal resultado = primeiroNumero + segundoNumero;
 
-    Console.WriteLine();
-    Console.WriteLine($"Resultado da soma: {resultado}");
+Console.WriteLine();
+Console.WriteLine($"Resultado da soma: {resultado}");
 
-    Console.ReadLine();
-}
+Console.ReadLine();
 ```
 
 `Program.cs`
@@ -77,52 +74,50 @@ Utilizaremos a estrutura de decisão `if/else if` para verificar qual operação
 - Sair do programa/método com a palavra chave `return`
 
 **Requisitos:**
+
 ✅ Adicionar a operação de subtração  
 ✅ Criar um menu para o usuário escolher a operação
 
 ```cs
-static void Main(string[] args)
+Console.WriteLine("-----------------------------------------");
+Console.WriteLine("Calculadora Tabajara 2025");
+Console.WriteLine("-----------------------------------------");
+
+Console.WriteLine("1 - Somar");
+Console.WriteLine("2 - Subtrair");
+Console.WriteLine("S - Sair");
+Console.WriteLine("-----------------------------------------");
+
+Console.Write("Escolha uma opção: ");
+
+string opcao = Console.ReadLine();
+
+if (opcao == "S")
 {
-    Console.WriteLine("-----------------------------------------");
-    Console.WriteLine("Calculadora Tabajara 2025");
-    Console.WriteLine("-----------------------------------------");
-
-    Console.WriteLine("1 - Somar");
-    Console.WriteLine("2 - Subtrair");
-    Console.WriteLine("S - Sair");
-    Console.WriteLine("-----------------------------------------");
-
-    Console.Write("Escolha uma opção: ");
-
-    string opcao = Console.ReadLine();
-
-    if (opcao == "S")
-    {
-        return;
-    }
-
-    Console.WriteLine("-----------------------------------------");
-
-	// atribuição direta do input do usuário para variável com ReadLine()
-    Console.Write("Digite o primeiro número: ");
-    decimal primeiroNumero = Convert.ToDouble(Console.ReadLine());
-
-    Console.Write("Digite o segundo número: ");
-    decimal segundoNumero = Convert.ToDouble(Console.ReadLine());
-
-    decimal resultado = 0;
-
-    if (opcao == "1")
-        resultado = primeiroNumero + segundoNumero;
-
-    else if (opcao == "2")
-        resultado = primeiroNumero - segundoNumero;
-
-    Console.WriteLine("-----------------------------------------");
-    Console.Write($"Resultado: {resultado}");
-
-    Console.ReadLine();
+	return;
 }
+
+Console.WriteLine("-----------------------------------------");
+
+// atribuição direta do input do usuário para variável com ReadLine()
+Console.Write("Digite o primeiro número: ");
+decimal primeiroNumero = Convert.ToDouble(Console.ReadLine());
+
+Console.Write("Digite o segundo número: ");
+decimal segundoNumero = Convert.ToDouble(Console.ReadLine());
+
+decimal resultado = 0;
+
+if (opcao == "1")
+	resultado = primeiroNumero + segundoNumero;
+
+else if (opcao == "2")
+	resultado = primeiroNumero - segundoNumero;
+
+Console.WriteLine("-----------------------------------------");
+Console.Write($"Resultado: {resultado}");
+
+Console.ReadLine();
 ```
 
 `Program.cs`
@@ -146,68 +141,65 @@ Além disso, ao lidar com a **divisão**, precisamos verificar se o **segundo n�
 ✅ Melhorar a interface do menu
 
 ```cs
-static void Main(string[] args)
+while (true)
 {
-	while (true)
+	Console.Clear();
+	Console.WriteLine("-----------------------------------------");
+	Console.WriteLine("Calculadora Tabajara 2025");
+	Console.WriteLine("-----------------------------------------");
+	Console.WriteLine("1 - Somar");
+	Console.WriteLine("2 - Subtrair");
+	Console.WriteLine("3 - Multiplicar");
+	Console.WriteLine("4 - Dividir");
+	Console.WriteLine("S - Sair");
+	Console.WriteLine("-----------------------------------------");
+
+	Console.Write("Escolha uma opção: ");
+
+	string opcao = Console.ReadLine().ToUpper();
+
+	if (opcao == "S")
+		break;
+
+	Console.WriteLine("-----------------------------------------");
+
+	Console.Write("Digite o primeiro número: ");
+	int numero1 = Convert.ToInt32(Console.ReadLine());
+
+	Console.Write("Digite o segundo número: ");
+	int numero2 = Convert.ToInt32(Console.ReadLine());
+
+	int resultado = 0;
+
+	switch (opcao)
 	{
-		Console.Clear();
-		Console.WriteLine("-----------------------------------------");
-		Console.WriteLine("Calculadora Tabajara 2025");
-		Console.WriteLine("-----------------------------------------");
-		Console.WriteLine("1 - Somar");
-		Console.WriteLine("2 - Subtrair");
-		Console.WriteLine("3 - Multiplicar");
-		Console.WriteLine("4 - Dividir");
-		Console.WriteLine("S - Sair");
-		Console.WriteLine("-----------------------------------------");
-
-		Console.Write("Escolha uma opção: ");
-
-		string opcao = Console.ReadLine().ToUpper();
-
-		if (opcao == "S")
+		case "1":
+			resultado = numero1 + numero2;
 			break;
-
-		Console.WriteLine("-----------------------------------------");
-
-		Console.Write("Digite o primeiro número: ");
-		int numero1 = Convert.ToInt32(Console.ReadLine());
-
-		Console.Write("Digite o segundo número: ");
-		int numero2 = Convert.ToInt32(Console.ReadLine());
-
-		int resultado = 0;
-
-		switch (opcao)
-		{
-			case "1":
-				resultado = numero1 + numero2;
-				break;
-			case "2":
-				resultado = numero1 - numero2;
-				break;
-			case "3":
-				resultado = numero1 * numero2;
-				break;
-			case "4":
-				resultado = numero1 / numero2;
-				break;
-			default:
-				Console.WriteLine("\nOpção inválida!");
-				Console.ReadLine();
-				continue;
-		}
-
-		Console.WriteLine("-----------------------------------------");
-		Console.WriteLine($"Resultado: {resultado}");
-		Console.WriteLine("-----------------------------------------");
-
-		Console.Write("Deseja continuar? (S/N): ");
-		string opcaoContinuar = Console.ReadLine().ToUpper();
-
-		if (opcaoContinuar != "S")
+		case "2":
+			resultado = numero1 - numero2;
 			break;
+		case "3":
+			resultado = numero1 * numero2;
+			break;
+		case "4":
+			resultado = numero1 / numero2;
+			break;
+		default:
+			Console.WriteLine("\nOpção inválida!");
+			Console.ReadLine();
+			continue;
 	}
+
+	Console.WriteLine("-----------------------------------------");
+	Console.WriteLine($"Resultado: {resultado}");
+	Console.WriteLine("-----------------------------------------");
+
+	Console.Write("Deseja continuar? (S/N): ");
+	string opcaoContinuar = Console.ReadLine().ToUpper();
+
+	if (opcaoContinuar != "S")
+		break;
 }
 ```
 
