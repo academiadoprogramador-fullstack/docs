@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkacademia_do_programador_docs=self.webpackChunkacademia_do_programador_docs||[]).push([[583],{6866:(a,r,d)=>{d.r(r),d.d(r,{default:()=>e});var o=d(6347),c=d(4848);function e(){return(0,c.jsx)(o.rd,{to:"/inicio"})}}}]);
