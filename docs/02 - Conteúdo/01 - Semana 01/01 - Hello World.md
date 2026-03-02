@@ -9,67 +9,59 @@ tags:
 
 "Hello World" (Olá, Mundo) é o programa de computador mais simples e clássico, usado para exibir essa frase na tela, servindo como o primeiro passo no aprendizado de qualquer linguagem de programação.
 
-## Criando o Projeto
+## Criando a Solução
 
-Abra o Visual Studio.
+Em um local acessível, crie uma pasta chamada `HelloWorld`, este será o nome da nossa solução.
 
-Na tela inicial:
+Clique com o botão direito do mouse na pasta criada, ao avançar para o menu de contexto, clique em `Abrir com Code`.
 
-1. Clique em Create a new project
+![alt text](./_assets/1_vsc_open.png)
 
-![alt text](./_assets/1_vs_initial_screen.png)
+Sua tela deve estar assim:
 
----
+![alt text](./_assets/2_vsc_init.png)
 
-2. Na barra de busca, digite: `console`
+## Criando um projeto através da Paleta de Comandos
 
-![alt text](./_assets/2_project_select_screen.png)
+Agora abra a Paleta de Comandos do Visual Studio Code utilizando o atalho `CTRL + SHIFT + P`, isso permite que encontremos comandos e configurações padrão ou de terceiros.
 
----
+1. Digite `.NET` para acessar os comandos da extensão `C# Dev Kit`.
+2. Selecione a opção `.NET: New Project`.
 
-3. Selecione `Console App`
+![alt text](./_assets/3_vsc_command.png)
 
-(Escolha a versão em C#, não C++)
+A tela de seleção de template será aberta, aqui você pode selecionar que tipo de projeto irá ser criado, as opções disponíveis dependem dos `workloads` instalados com a `SDK`.
 
-Clique em `Next`.
+2. Selecione "Aplicativo do Console"
 
-## Configurando o Projeto
+![alt text](./_assets/4_vsc_consoleapp.png)
 
-Agora você precisa definir:
+3. No próximo prompt, você deve nomear o projeto que está criando, neste caso digitaremos `HelloWorld.ConsoleApp`
 
-- `Project name` → Exemplo: HelloWorld.ConsoleApp
-- `Location` → Pasta onde o projeto será salvo
-- `Solution name` → Pode deixar igual ao nome do projeto, porém tire o sufixo
+![alt text](./_assets/5_vsc_projname.png)
 
-Clique em `Next`.
+4. Agora selecione a pasta onde o projeto será criado, como já criamos a pasta da solução `HelloWorld`, manteremos o padrão.
 
-![alt text](./_assets/3_project_config_screen.png)
+![alt text](./_assets/6_vsc_projdir.png)
 
-## Escolhendo a versão do .NET
+5. No proximo prompt, selecione o tipo de solução `sln` (padrão pré .NET 10).
 
-Selecione a versão mais recente disponível, por exemplo:
+![alt text](./_assets/7_vsc_soltype.png)
 
-- .NET 9
-- .NET 10 (se disponível)
+6. Confirme a criação do projeto e as configurações serão criadas.
 
-Clique em `Create`.
+![alt text](./_assets/8_vsc_newprog.png)
 
-![alt text](./_assets/4_project_options_screen.png)
+## Execução do Projeto
 
-## O código gerado automaticamente
+Agora que o nosso projeto de aplicativo do console está criado, o .NET automaticamente cria um arquivo Program.cs que será o "ponto de partida" da nossa aplicação.
 
-O Visual Studio cria um projeto com o chamado Program.cs contendo o seguinte comando:
+Execute o projeto clicando no botão no canto superior direito:
 
-```cs
-Console.WriteLine("Hello, World!");
-```
+![alt text](./_assets/9_vsc_execute.png)
 
-## Executando a Aplicação
+O código gerado deve escrever a frase "Hello World" ao executar o programa.
 
-Para ver o código funcionando, você pode clicar no botão verde que contém o nome do projeto `HelloWorld.ConsoleApp`:
+![alt text](./_assets/10_vsc_helloworld.png)
 
-![alt text](./_assets/5_debug_button.png)
-
-Ao executar, você deve ver a seguinte janela aberta:
-
-![alt text](./_assets/6_hello_world.png)
+Parabéns, essa é sua primeira execução de um programa em C#!
