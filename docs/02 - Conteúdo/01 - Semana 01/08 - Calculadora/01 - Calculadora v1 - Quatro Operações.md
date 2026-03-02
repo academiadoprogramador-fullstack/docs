@@ -1,6 +1,6 @@
 ---
 draft: true
-slug: /introducao-ao-csharp/calculadora
+slug: /introducao-ao-csharp/calculadora-v1
 tags:
   - Aula 02
   - Introdução ao C#
