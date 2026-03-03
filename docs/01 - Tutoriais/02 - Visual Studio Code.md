@@ -12,8 +12,6 @@ Para desenvolvimento com C#, é altamente recomendado instalar a extensão **C# 
 
 > ⚠️ Antes de continuar, certifique-se de que o **.NET SDK** já está instalado na sua máquina.
 
----
-
 ## Download
 
 Para baixar o VS Code:
@@ -48,7 +46,7 @@ code .
 
 Ao abrir o VS Code você deve ver uma tela similar a esta:
 
-![alt text](image.png)
+![alt text](_assets/0_vsc_page.png)
 
 ## Extensão C# Dev Kit
 
