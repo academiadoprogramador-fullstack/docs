@@ -1,8 +1,8 @@
 ---
-draft: true
+draft: false
 slug: /introducao-ao-csharp/estrutura-de-decisao-switch
 tags:
-  - Aula 02
+  - Aula 03
   - "Introdução ao C#"
   - Estruturas de Decisão
 ---

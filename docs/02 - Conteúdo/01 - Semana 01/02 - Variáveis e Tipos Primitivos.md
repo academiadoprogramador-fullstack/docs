@@ -1,8 +1,8 @@
 ---
-draft: true
+draft: false
 slug: /introducao-ao-csharp/variaveis-e-tipos-primitivos
 tags:
-  - Aula 02
+  - Aula 03
   - Introdução ao C#
   - Tipos Primitivos
 ---
