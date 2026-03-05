@@ -1,8 +1,8 @@
 ---
-draft: true
+draft: false
 slug: /introducao-ao-csharp/estrutura-de-repeticao-for
 tags:
-  - Aula 03
+  - Aula 04
   - "Introdução ao C#"
   - Estruturas de Repetição
 ---

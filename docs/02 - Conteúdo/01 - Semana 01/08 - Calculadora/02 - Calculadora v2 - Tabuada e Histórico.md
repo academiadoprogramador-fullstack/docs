@@ -1,8 +1,8 @@
 ---
-draft: true
+draft: false
 slug: /introducao-ao-csharp/calculadora-v2
 tags:
-  - Aula 03
+  - Aula 04
   - Introdução ao C#
   - Tipos Primitivos
   - I/O
@@ -12,8 +12,8 @@ tags:
 
 ## Passo a passo
 
-1. Nossa calculadora deve ter a possibilidade de somar dois números
-2. Nossa calculadora deve ter a possibilidade de subtrair dois números
+1. Nossa calculadora deve dar a possibilidade de produzir a tabuada de um número informado
+2. Nossa calculadora deve dar a possibilidade de visualizar histórico de operações
 
 ## Requisito 1: Produzir a tabuada de um número informado
 

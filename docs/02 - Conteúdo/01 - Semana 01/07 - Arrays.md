@@ -1,8 +1,8 @@
 ---
-draft: true
+draft: false
 slug: /introducao-ao-csharp/arrays-simples
 tags:
-  - Aula 03
+  - Aula 04
   - "Introdução ao C#"
   - Coleções
 ---
