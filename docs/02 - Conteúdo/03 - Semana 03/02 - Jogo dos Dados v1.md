@@ -2,7 +2,7 @@
 draft: false
 slug: /introducao-ao-csharp/jogo-dados-v1
 tags:
-  - Aula 14
+  - Aula 15
   - Introdução ao C#
   - Estruturas de Repetição
   - Estruturas de Decisão
