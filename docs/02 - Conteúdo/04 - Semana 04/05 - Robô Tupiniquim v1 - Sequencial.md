@@ -1,5 +1,5 @@
 ---
-slug: /introducao-ao-csharp/robo-tupiniquim-v2
+slug: /introducao-ao-csharp/robo-tupiniquim-v1
 tags:
   - Aula 18
   - Introdução ao C#
