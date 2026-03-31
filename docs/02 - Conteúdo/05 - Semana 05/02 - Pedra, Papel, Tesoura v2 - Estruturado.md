@@ -8,7 +8,7 @@ tags:
 
 Nesta versão 2, iremos refatorar o jogo **Pedra, Papel e Tesoura** para uma abordagem **estruturada**, separando responsabilidades em métodos.
 
-Na versão anterior (v1), todo o código estava dentro do `while`, o que dificultava leitura e manutenção. fileciteturn1file0
+Na versão anterior (v1), todo o código estava dentro do `while`, o que dificultava leitura e manutenção.
 
 Agora, vamos dividir o problema em **pequenos blocos reutilizáveis**.
 
