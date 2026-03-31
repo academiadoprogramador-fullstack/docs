@@ -108,16 +108,74 @@ class PedraPapelTesoura
 
     public static void CompararEscolhas(int escolhaJogador, int escolhaComputador)
     {
-        if (escolhaJogador == escolhaComputador)
+         if (escolhaJogador == escolhaComputador)
         {
+            Console.WriteLine("----------------------------------------");
             Console.WriteLine("Empate!");
+            Console.WriteLine("----------------------------------------");
         }
         else if (escolhaJogador == OPCAO_PEDRA)
         {
+            Console.Write("Pedra x ");
+
             if (escolhaComputador == OPCAO_TESOURA)
+            {
+                Console.WriteLine("Tesoura");
+
+                Console.WriteLine("----------------------------------------");
                 Console.WriteLine("Você venceu!");
-            else
+                Console.WriteLine("----------------------------------------");
+            }
+            else if (escolhaComputador == OPCAO_PAPEL)
+            {
+                Console.WriteLine("Papel");
+
+                Console.WriteLine("----------------------------------------");
                 Console.WriteLine("O Computador venceu!");
+                Console.WriteLine("----------------------------------------");
+            }
+        }
+        else if (escolhaJogador == OPCAO_PAPEL)
+        {
+            Console.Write("Papel x ");
+
+            if (escolhaComputador == OPCAO_PEDRA)
+            {
+                Console.WriteLine("Pedra");
+
+                Console.WriteLine("----------------------------------------");
+                Console.WriteLine("Você venceu!");
+                Console.WriteLine("----------------------------------------");
+            }
+            else if (escolhaComputador == OPCAO_TESOURA)
+            {
+                Console.WriteLine("Tesoura");
+
+                Console.WriteLine("----------------------------------------");
+                Console.WriteLine("O Computador venceu!");
+                Console.WriteLine("----------------------------------------");
+            }
+        }
+        else if (escolhaJogador == OPCAO_TESOURA)
+        {
+            Console.Write("Tesoura x ");
+
+            if (escolhaComputador == OPCAO_PAPEL)
+            {
+                Console.WriteLine("Papel");
+
+                Console.WriteLine("----------------------------------------");
+                Console.WriteLine("Você venceu!");
+                Console.WriteLine("----------------------------------------");
+            }
+            else if (escolhaComputador == OPCAO_PEDRA)
+            {
+                Console.WriteLine("Pedra");
+
+                Console.WriteLine("----------------------------------------");
+                Console.WriteLine("O Computador venceu!");
+                Console.WriteLine("----------------------------------------");
+            }
         }
     }
 }

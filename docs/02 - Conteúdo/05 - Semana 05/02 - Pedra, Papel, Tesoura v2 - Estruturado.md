@@ -146,8 +146,6 @@ static void CompararEscolhas(int escolhaJogador, int escolhaComputador)
 - Recebe os valores
 - Executa toda a lógica de decisão
 
-👉 Centraliza regras do jogo
-
 ## Requisito 6: Perguntar se deseja continuar
 
 ```csharp
@@ -166,8 +164,6 @@ static bool JogadorDesejaContinuar()
 
 - Retorna `true` ou `false`
 - Controla o loop do jogo
-
-👉 Comunicação direta com o `Main`
 
 ## Resultado da Refatoração
 
