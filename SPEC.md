@@ -397,6 +397,46 @@ Exemplo:
 Mensagem de commit sugerida: Adicionado documento sobre TagHelpers
 ```
 
+## Fluxo de Commit com Agentes
+
+Por padrão, o agente deve criar ou alterar os arquivos, validar a alteração quando fizer sentido e sugerir a mensagem de commit.
+
+O agente não deve criar commits automaticamente sem pedido explícito do usuário.
+
+Quando o usuário pedir apenas a alteração, o fluxo recomendado é:
+
+1. Fazer a alteração solicitada.
+2. Verificar os arquivos modificados com `git status`.
+3. Validar o Markdown ou executar `npm run build` quando a alteração puder afetar o Docusaurus.
+4. Informar o que foi alterado.
+5. Sugerir uma mensagem de commit seguindo o padrão deste arquivo.
+
+Quando o usuário pedir explicitamente para criar o commit, o fluxo recomendado é:
+
+1. Fazer a alteração solicitada.
+2. Verificar os arquivos modificados com `git status`.
+3. Validar a alteração quando fizer sentido.
+4. Adicionar apenas os arquivos relacionados à tarefa.
+5. Criar o commit com uma mensagem curta e informativa.
+6. Informar o hash ou a mensagem do commit criado.
+
+Exemplo de pedido do usuário:
+
+```text
+Faça a alteração, valide com build e crie um commit seguindo o SPEC.md.
+```
+
+Exemplo de comandos:
+
+```bash
+git add SPEC.md
+git commit -m "Atualizado SPEC.md com orientações de commit"
+```
+
+Antes de executar `git add`, o agente deve conferir se existem alterações não relacionadas no repositório.
+
+Se existirem alterações não relacionadas, o agente deve adicioná-las ao commit somente se o usuário pedir explicitamente.
+
 ## Definição de Pronto
 
 Uma alteração de documentação está pronta quando:
