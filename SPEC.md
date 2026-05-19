@@ -356,6 +356,47 @@ Quando houver dúvida entre uma explicação curta e uma explicação completa, 
 
 Quando houver dúvida entre uma abstração e um caso concreto, comece pelo caso concreto.
 
+## Mensagens de Commit
+
+Após adicionar ou alterar documentos, o agente deve sugerir uma mensagem de commit informativa.
+
+A mensagem deve tentar manter o padrão dos commits anteriores do repositório.
+
+O padrão atual usa frases curtas, em português, começando por uma ação no particípio:
+
+- `Adicionado documento`;
+- `Adicionados documentos`;
+- `Atualizado documento`;
+- `Atualizado local do documento`;
+- `Adicionado SPEC.md para agentes`.
+
+Quando possível, mantenha esse formato e acrescente o assunto principal da alteração.
+
+Exemplos:
+
+```text
+Adicionado documento sobre TagHelpers
+Adicionado documento sobre DataAnnotations e ModelState
+Atualizado SPEC.md com orientações de commit
+Atualizado documento de ViewModels e Records
+```
+
+Use `Adicionado` quando um único documento novo for criado.
+
+Use `Adicionados` quando mais de um documento novo for criado.
+
+Use `Atualizado` quando um documento existente for editado.
+
+Evite mensagens genéricas quando o assunto puder ser identificado com clareza.
+
+Ao final da resposta, informe a mensagem sugerida em uma linha separada.
+
+Exemplo:
+
+```text
+Mensagem de commit sugerida: Adicionado documento sobre TagHelpers
+```
+
 ## Definição de Pronto
 
 Uma alteração de documentação está pronta quando:
