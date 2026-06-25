@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkacademia_do_programador_docs=self.webpackChunkacademia_do_programador_docs||[]).push([[8491],{28491:(a,e,c)=>{c.d(e,{createPacketServices:()=>r.$});var r=c(39773);c(51400)}}]);

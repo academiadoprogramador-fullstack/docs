@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkacademia_do_programador_docs=self.webpackChunkacademia_do_programador_docs||[]).push([[5041],{95041:(a,e,d)=>{d.d(e,{createEventModelingServices:()=>r.g});var r=d(76737);d(51400)}}]);
