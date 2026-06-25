@@ -26,6 +26,7 @@ const config: Config = {
   projectName: "docs", // Usually your repo name.
 
   markdown: {
+    mermaid: true,
     hooks: {
       onBrokenMarkdownLinks: "throw",
     },
@@ -52,6 +53,8 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
+
+  themes: ["@docusaurus/theme-mermaid"],
 
   themeConfig: {
     colorMode: {
