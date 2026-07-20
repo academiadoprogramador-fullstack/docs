@@ -1,11 +1,11 @@
 ---
 slug: /introducao-ao-csharp/modificadores-acesso-static
 tags:
-  - Aula 16
-  - Introdução ao C#
-  - Static
-  - Programação Estruturada
-  - Modificadores de Acesso
+  - trilha-programacao-estruturada
+  - tech-csharp
+  - conceito-static
+  - conceito-modificadores-acesso
+  - material-aula-conceitual
 ---
 
 Até agora, organizamos nossos programas utilizando métodos `static`.

@@ -2,9 +2,10 @@
 draft: false
 slug: /introducao-ao-csharp/variaveis-e-tipos-primitivos
 tags:
-  - Aula 03
-  - Introdução ao C#
-  - Tipos Primitivos
+  - trilha-fundamentos-csharp
+  - tech-csharp
+  - conceito-tipos-primitivos
+  - material-aula-conceitual
 ---
 
 Em C#, variáveis e tipos primitivos são a base de qualquer programa. Eles definem como armazenamos dados na memória e qual tipo de informação pode ser guardada.

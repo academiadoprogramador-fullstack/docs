@@ -1,9 +1,11 @@
 ---
 slug: /introducao-ao-csharp/pedra-papel-tesoura-v2
 tags:
-  - Aula 22
-  - Introdução ao C#
-  - Programação Estruturada
+  - trilha-programacao-estruturada
+  - tech-csharp
+  - conceito-refatoracao
+  - projeto-pedra-papel-tesoura
+  - material-projeto-incremental
 ---
 
 Nesta versão 2, iremos refatorar o jogo **Pedra, Papel e Tesoura** para uma abordagem **estruturada**, separando responsabilidades em métodos.

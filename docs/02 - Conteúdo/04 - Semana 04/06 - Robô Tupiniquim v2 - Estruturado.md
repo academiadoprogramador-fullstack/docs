@@ -1,10 +1,12 @@
 ---
 slug: /introducao-ao-csharp/robo-tupiniquim-v2
 tags:
-  - Aula 18
-  - Introdução ao C#
-  - Programação Estruturada
-  - Static
+  - trilha-programacao-estruturada
+  - tech-csharp
+  - conceito-static
+  - conceito-refatoracao
+  - projeto-robo-tupiniquim
+  - material-projeto-incremental
 ---
 
 Nesta versão, vamos refatorar a solução do **Robô Tupiniquim** para um modelo mais organizado, seguindo a mesma ideia aplicada no **Jogo dos Dados**.

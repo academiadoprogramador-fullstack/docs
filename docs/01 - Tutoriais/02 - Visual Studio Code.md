@@ -1,9 +1,10 @@
 ---
 slug: /tutoriais/vscode-csharp-devkit
 tags:
-  - Tutoriais
-  - VS Code
-  - C#
+  - trilha-ferramentas
+  - tech-vscode
+  - tech-csharp
+  - material-tutorial
 ---
 
 O **Visual Studio Code (VS Code)** é uma IDE (ou editor de código avançado) leve, gratuita e multiplataforma, desenvolvida pela Microsoft. Ele permite desenvolver aplicações em diversas linguagens, incluindo C#.

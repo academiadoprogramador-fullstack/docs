@@ -2,11 +2,12 @@
 draft: false
 slug: /conteudo/arquitetura-n-layer-vertical-slices
 tags:
-  - Aula 19
-  - Arquitetura
-  - N-Layer
-  - Vertical Slices
-  - Camadas
+  - trilha-arquitetura-software
+  - conceito-arquitetura-camadas
+  - conceito-camadas
+  - conceito-vertical-slices
+  - material-aula-conceitual
+  - projeto-controle-medicamentos
 ---
 
 # Arquitetura N-Layer e Vertical Slices

@@ -2,9 +2,10 @@
 draft: false
 slug: /introducao-ao-csharp/estrutura-de-decisao-switch
 tags:
-  - Aula 03
-  - "Introdução ao C#"
-  - Estruturas de Decisão
+  - trilha-fundamentos-csharp
+  - tech-csharp
+  - conceito-decisoes
+  - material-aula-conceitual
 ---
 
 Em C#, a estrutura `switch` é utilizada quando precisamos comparar uma

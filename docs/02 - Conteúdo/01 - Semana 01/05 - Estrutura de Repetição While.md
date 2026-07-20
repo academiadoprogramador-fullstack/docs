@@ -2,9 +2,10 @@
 draft: false
 slug: /introducao-ao-csharp/estrutura-de-repeticao-while
 tags:
-  - Aula 03
-  - Introdução ao C#
-  - Estruturas de Repetição
+  - trilha-fundamentos-csharp
+  - tech-csharp
+  - conceito-repeticoes
+  - material-aula-conceitual
 ---
 
 Em C#, estruturas de repetição permitem executar um bloco de código várias vezes enquanto uma condição for verdadeira.

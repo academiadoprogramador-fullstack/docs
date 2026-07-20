@@ -2,11 +2,10 @@
 draft: false
 slug: /introducao-ao-csharp/paradigmas-programacao-sequencial-e-procedural
 tags:
-  - Aula 11
-  - Introdução ao C#
-  - Paradigmas de Programação
-  - Programação Sequencial
-  - Programação Procedural
+  - trilha-programacao-estruturada
+  - tech-csharp
+  - conceito-paradigmas
+  - material-aula-conceitual
 ---
 
 Antes de estudarmos programação sequencial e programação procedural, é importante entender um conceito maior chamado **paradigma de programação**.

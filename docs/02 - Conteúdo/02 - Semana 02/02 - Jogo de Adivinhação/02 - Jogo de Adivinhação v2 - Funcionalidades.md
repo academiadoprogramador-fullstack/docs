@@ -2,12 +2,14 @@
 draft: false
 slug: /introducao-ao-csharp/jogo-de-adivinhacao-v2
 tags:
-  - Aula 07
-  - Introdução ao C#
-  - Estruturas de Decisão
-  - Estruturas de Repetição
-  - Arrays
-  - Randomização
+  - trilha-fundamentos-csharp
+  - tech-csharp
+  - conceito-randomizacao
+  - conceito-decisoes
+  - conceito-repeticoes
+  - conceito-arrays
+  - projeto-jogo-adivinhacao
+  - material-projeto-incremental
 ---
 
 Nesta nova versão do projeto iremos **evoluir o jogo de adivinhação**

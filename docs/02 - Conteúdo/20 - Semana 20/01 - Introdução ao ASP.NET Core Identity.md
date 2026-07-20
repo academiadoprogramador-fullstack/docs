@@ -2,11 +2,11 @@
 draft: false
 slug: /conteudo/autenticacao-aspnet-core-identity
 tags:
-  - Aula 20
-  - Autenticação
-  - Autorização
-  - Identity
-  - ASP.NET Core
+  - trilha-seguranca-web
+  - tech-aspnet-core-mvc
+  - conceito-autenticacao
+  - conceito-autorizacao
+  - material-aula-conceitual
 ---
 
 # Autenticação e Autorização com ASP.NET Core Identity

@@ -2,12 +2,13 @@
 draft: false
 slug: /introducao-ao-csharp/calculadora-v1
 tags:
-  - Aula 03
-  - Introdução ao C#
-  - Tipos Primitivos
-  - I/O
-  - Estruturas de Decisão
-  - Estruturas de Repetição
+  - trilha-fundamentos-csharp
+  - tech-csharp
+  - conceito-entrada-saida
+  - conceito-decisoes
+  - conceito-repeticoes
+  - projeto-calculadora
+  - material-projeto-incremental
 ---
 
 Nosso primeiro desafio é fazer um sistema para calcular operações matemáticas simples, como adição, subtração, multiplicação e divisão entre dois números.

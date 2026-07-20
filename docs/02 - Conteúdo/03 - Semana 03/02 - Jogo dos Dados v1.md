@@ -2,11 +2,13 @@
 draft: false
 slug: /introducao-ao-csharp/jogo-dados-v1
 tags:
-  - Aula 15
-  - Introdução ao C#
-  - Estruturas de Repetição
-  - Estruturas de Decisão
-  - Random
+  - trilha-programacao-estruturada
+  - tech-csharp
+  - conceito-randomizacao
+  - conceito-decisoes
+  - conceito-repeticoes
+  - projeto-jogo-dados
+  - material-projeto-incremental
 ---
 
 # Jogo dos Dados (Versão 1)

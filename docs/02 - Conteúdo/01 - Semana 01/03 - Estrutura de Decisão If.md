@@ -2,9 +2,10 @@
 draft: false
 slug: /introducao-ao-csharp/estrutura-de-decisao-if
 tags:
-  - Aula 03
-  - Introdução ao C#
-  - Estruturas de Decisão
+  - trilha-fundamentos-csharp
+  - tech-csharp
+  - conceito-decisoes
+  - material-aula-conceitual
 ---
 
 Em C#, estruturas de decisão permitem que o programa tome decisões com base em condições.

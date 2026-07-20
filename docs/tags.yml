@@ -1,0 +1,379 @@
+trilha-fundamentos-csharp:
+  label: Fundamentos de C#
+  permalink: /fundamentos-de-csharp
+  description: Conteúdos introdutórios sobre a linguagem C# e seus recursos básicos.
+
+trilha-programacao-estruturada:
+  label: Programação Estruturada
+  permalink: /programacao-estruturada
+  description: Conteúdos sobre controle de fluxo, métodos e organização de programas.
+
+trilha-programacao-orientada-objetos:
+  label: Programação Orientada a Objetos
+  permalink: /programacao-orientada-a-objetos
+  description: Conteúdos sobre classes, objetos, abstração e os pilares da orientação a objetos.
+
+trilha-programacao-web:
+  label: Programação Web
+  permalink: /programacao-web
+  description: Conteúdos sobre aplicações web com ASP.NET Core MVC.
+
+trilha-banco-dados:
+  label: Banco de Dados
+  permalink: /banco-de-dados
+  description: Conteúdos sobre modelagem, SQL Server e persistência de dados.
+
+trilha-devops:
+  label: DevOps
+  permalink: /devops
+  description: Conteúdos sobre automação, integração contínua e entrega de aplicações.
+
+trilha-arquitetura-software:
+  label: Arquitetura de Software
+  permalink: /arquitetura-de-software
+  description: Conteúdos sobre camadas, organização de dependências e arquitetura de aplicações.
+
+trilha-seguranca-web:
+  label: Segurança Web
+  permalink: /seguranca-web
+  description: Conteúdos sobre autenticação, autorização e isolamento de dados.
+
+trilha-ferramentas:
+  label: Ferramentas de Desenvolvimento
+  permalink: /ferramentas-de-desenvolvimento
+  description: Tutoriais de instalação e configuração das ferramentas usadas no curso.
+
+tech-csharp:
+  label: C#
+  permalink: /csharp
+  description: Conteúdos que utilizam a linguagem C#.
+
+tech-dotnet:
+  label: .NET
+  permalink: /dotnet
+  description: Conteúdos sobre a plataforma .NET e seu SDK.
+
+tech-aspnet-core-mvc:
+  label: ASP.NET Core MVC
+  permalink: /aspnet-core-mvc
+  description: Conteúdos sobre desenvolvimento web com ASP.NET Core MVC.
+
+tech-sql-server:
+  label: SQL Server
+  permalink: /sql-server
+  description: Conteúdos sobre o banco de dados SQL Server.
+
+tech-dapper:
+  label: Dapper
+  permalink: /dapper
+  description: Conteúdos sobre acesso a dados com Dapper.
+
+tech-entity-framework-core:
+  label: Entity Framework Core
+  permalink: /entity-framework-core
+  description: Conteúdos sobre persistência com Entity Framework Core.
+
+tech-git:
+  label: Git
+  permalink: /git
+  description: Conteúdos sobre controle de versão com Git.
+
+tech-vscode:
+  label: VS Code
+  permalink: /vs-code
+  description: Conteúdos sobre desenvolvimento no Visual Studio Code.
+
+tech-github-actions:
+  label: GitHub Actions
+  permalink: /github-actions
+  description: Conteúdos sobre automação de workflows com GitHub Actions.
+
+tech-azure:
+  label: Azure
+  permalink: /azure
+  description: Conteúdos sobre publicação de aplicações na Microsoft Azure.
+
+tech-automapper:
+  label: AutoMapper
+  permalink: /automapper
+  description: Conteúdos sobre mapeamento entre objetos.
+
+conceito-entrada-saida:
+  label: Entrada e Saída
+  permalink: /entrada-e-saida
+  description: Leitura de dados e exibição de informações em aplicações C#.
+
+conceito-tipos-primitivos:
+  label: Tipos Primitivos
+  permalink: /tipos-primitivos
+  description: Tipos básicos e variáveis da linguagem C#.
+
+conceito-decisoes:
+  label: Estruturas de Decisão
+  permalink: /estruturas-de-decisao
+  description: Estruturas condicionais como if e switch.
+
+conceito-repeticoes:
+  label: Estruturas de Repetição
+  permalink: /estruturas-de-repeticao
+  description: Laços de repetição como while e for.
+
+conceito-arrays:
+  label: Arrays
+  permalink: /arrays
+  description: Coleções indexadas de valores em C#.
+
+conceito-randomizacao:
+  label: Randomização
+  permalink: /randomizacao
+  description: Geração de valores aleatórios em C#.
+
+conceito-metodos:
+  label: Métodos
+  permalink: /metodos
+  description: Criação e organização de métodos em C#.
+
+conceito-paradigmas:
+  label: Paradigmas de Programação
+  permalink: /paradigmas-de-programacao
+  description: Diferentes formas de organizar e expressar programas.
+
+conceito-refatoracao:
+  label: Refatoração
+  permalink: /refatoracao
+  description: Melhorias na organização interna do código sem alterar seu comportamento.
+
+conceito-static:
+  label: Static
+  permalink: /static
+  description: Uso de membros e classes estáticas em C#.
+
+conceito-modificadores-acesso:
+  label: Modificadores de Acesso
+  permalink: /modificadores-de-acesso
+  description: Controle de visibilidade de tipos e membros.
+
+conceito-classes-objetos:
+  label: Classes e Objetos
+  permalink: /classes-e-objetos
+  description: Fundamentos de classes, objetos, atributos e métodos.
+
+conceito-separacao-responsabilidades:
+  label: Separação de Responsabilidades
+  permalink: /separacao-de-responsabilidades
+  description: Organização do código em partes com responsabilidades bem definidas.
+
+conceito-crud:
+  label: CRUD
+  permalink: /crud
+  description: Operações de criação, leitura, atualização e exclusão de dados.
+
+conceito-camadas:
+  label: Camadas
+  permalink: /camadas
+  description: Organização de aplicações em camadas com responsabilidades distintas.
+
+conceito-encapsulamento:
+  label: Encapsulamento
+  permalink: /encapsulamento
+  description: Proteção e controle do estado interno dos objetos.
+
+conceito-heranca:
+  label: Herança
+  permalink: /heranca
+  description: Reutilização e especialização de classes por herança.
+
+conceito-polimorfismo:
+  label: Polimorfismo
+  permalink: /polimorfismo
+  description: Uso de uma mesma abstração para comportamentos diferentes.
+
+conceito-interfaces:
+  label: Interfaces
+  permalink: /interfaces
+  description: Contratos para definir comportamentos de tipos.
+
+conceito-generics:
+  label: Generics
+  permalink: /generics
+  description: Reutilização de código com tipagem forte.
+
+conceito-servidor-web:
+  label: Servidor Web
+  permalink: /servidor-web
+  description: Fundamentos de servidores web, HTTP e aplicações web.
+
+conceito-mvc:
+  label: MVC
+  permalink: /mvc
+  description: Separação entre Models, Views e Controllers.
+
+conceito-layout:
+  label: Layouts e ViewBag
+  permalink: /layouts-e-viewbag
+  description: Organização de layouts e compartilhamento de dados nas Views.
+
+conceito-viewmodels:
+  label: ViewModels
+  permalink: /viewmodels
+  description: Modelos específicos para transportar dados entre Controller e View.
+
+conceito-taghelpers:
+  label: Tag Helpers
+  permalink: /tag-helpers
+  description: Recursos Razor para gerar HTML e links nas Views.
+
+conceito-validacao:
+  label: Validação
+  permalink: /validacao
+  description: Validação de dados de entrada e tratamento de erros de formulários.
+
+conceito-delegates-lambda:
+  label: Delegates e Expressões Lambda
+  permalink: /delegates-e-expressoes-lambda
+  description: Delegates, métodos anônimos, expressões lambda e LINQ.
+
+conceito-injecao-dependencia:
+  label: Injeção de Dependência
+  permalink: /injecao-de-dependencia
+  description: Registro e fornecimento de dependências em aplicações .NET.
+
+conceito-tempdata:
+  label: TempData
+  permalink: /tempdata
+  description: Transporte temporário de dados entre requisições web.
+
+conceito-services:
+  label: Services e Camada de Aplicação
+  permalink: /services-e-camada-de-aplicacao
+  description: Organização das regras de aplicação fora dos Controllers.
+
+conceito-extension-methods:
+  label: Extension Methods
+  permalink: /extension-methods
+  description: Extensão de tipos existentes com métodos adicionais.
+
+conceito-persistencia:
+  label: Persistência
+  permalink: /persistencia
+  description: Armazenamento e recuperação de dados pelas aplicações.
+
+conceito-sql:
+  label: SQL
+  permalink: /sql
+  description: Consultas e comandos para manipulação de dados relacionais.
+
+conceito-database-projects:
+  label: Database Projects
+  permalink: /database-projects
+  description: Versionamento e implantação da estrutura de bancos de dados.
+
+conceito-ci-cd:
+  label: CI/CD
+  permalink: /ci-cd
+  description: Integração, build, artefatos e entrega automatizada.
+
+conceito-yaml:
+  label: YAML e Workflows
+  permalink: /yaml-e-workflows
+  description: Estrutura de arquivos YAML usados em automações.
+
+conceito-arquitetura-camadas:
+  label: Arquitetura em Camadas
+  permalink: /arquitetura-em-camadas
+  description: Organização arquitetural baseada em camadas e dependências.
+
+conceito-vertical-slices:
+  label: Vertical Slices
+  permalink: /vertical-slices
+  description: Organização de funcionalidades por fatias verticais.
+
+conceito-clean-architecture:
+  label: Clean Architecture
+  permalink: /clean-architecture
+  description: Organização de dependências com o domínio protegido no centro.
+
+conceito-dominio-casos-uso:
+  label: Domínio e Casos de Uso
+  permalink: /dominio-e-casos-de-uso
+  description: Regras de negócio e casos de uso independentes de detalhes externos.
+
+conceito-inversao-dependencia:
+  label: Inversão de Dependência
+  permalink: /inversao-de-dependencia
+  description: Princípio de dependência orientada para abstrações.
+
+conceito-autenticacao:
+  label: Autenticação
+  permalink: /autenticacao
+  description: Identificação de usuários em aplicações web.
+
+conceito-autorizacao:
+  label: Autorização
+  permalink: /autorizacao
+  description: Controle das ações permitidas para cada usuário.
+
+conceito-multiusuario:
+  label: Aplicações Multiusuário
+  permalink: /aplicacoes-multiusuario
+  description: Isolamento e controle de dados em aplicações com vários usuários.
+
+conceito-seguranca:
+  label: Segurança
+  permalink: /seguranca
+  description: Práticas para proteger usuários e dados da aplicação.
+
+material-tutorial:
+  label: Tutorial
+  permalink: /tutorial
+  description: Guias práticos de instalação e configuração.
+
+material-aula-conceitual:
+  label: Aula Conceitual
+  permalink: /aula-conceitual
+  description: Explicações focadas na compreensão de um conceito.
+
+material-projeto-incremental:
+  label: Projeto Incremental
+  permalink: /projeto-incremental
+  description: Evolução de um projeto em etapas sucessivas.
+
+projeto-calculadora:
+  label: "Projeto: Calculadora"
+  permalink: /projeto-calculadora
+  description: Evolução incremental do projeto Calculadora.
+
+projeto-jogo-adivinhacao:
+  label: "Projeto: Jogo de Adivinhação"
+  permalink: /projeto-jogo-de-adivinhacao
+  description: Evolução incremental do projeto Jogo de Adivinhação.
+
+projeto-jogo-dados:
+  label: "Projeto: Jogo dos Dados"
+  permalink: /projeto-jogo-dos-dados
+  description: Evolução incremental do projeto Jogo dos Dados.
+
+projeto-robo-tupiniquim:
+  label: "Projeto: Robô Tupiniquim"
+  permalink: /projeto-robo-tupiniquim
+  description: Evolução incremental do projeto Robô Tupiniquim.
+
+projeto-pedra-papel-tesoura:
+  label: "Projeto: Pedra, Papel e Tesoura"
+  permalink: /projeto-pedra-papel-e-tesoura
+  description: Evolução incremental do projeto Pedra, Papel e Tesoura.
+
+projeto-gestao-equipamentos:
+  label: "Projeto: Gestão de Equipamentos"
+  permalink: /projeto-gestao-de-equipamentos
+  description: Evolução incremental do projeto Gestão de Equipamentos.
+
+projeto-clube-leitura:
+  label: "Projeto: Clube da Leitura"
+  permalink: /projeto-clube-da-leitura
+  description: Evolução incremental do projeto Clube da Leitura.
+
+projeto-controle-medicamentos:
+  label: "Projeto: Controle de Medicamentos"
+  permalink: /projeto-controle-de-medicamentos
+  description: Aplicação usada como referência nos conteúdos de entrega e arquitetura.

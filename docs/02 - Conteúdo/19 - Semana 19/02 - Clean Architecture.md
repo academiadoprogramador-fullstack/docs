@@ -2,12 +2,12 @@
 draft: false
 slug: /conteudo/clean-architecture
 tags:
-  - Aula 19
-  - Arquitetura
-  - Clean Architecture
-  - Domínio
-  - Casos de Uso
-  - Inversão de Dependência
+  - trilha-arquitetura-software
+  - conceito-clean-architecture
+  - conceito-dominio-casos-uso
+  - conceito-inversao-dependencia
+  - material-aula-conceitual
+  - projeto-controle-medicamentos
 ---
 
 # Clean Architecture

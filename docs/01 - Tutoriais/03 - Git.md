@@ -1,9 +1,9 @@
 ---
 slug: /tutoriais/git
 tags:
-  - Tutoriais
-  - Git
-  - Versionamento
+  - trilha-ferramentas
+  - tech-git
+  - material-tutorial
 ---
 
 O **Git** é um sistema de controle de versão distribuído utilizado para rastrear alterações no código-fonte ao longo do tempo. Ele permite que desenvolvedores trabalhem em equipe, criem versões do projeto e mantenham um histórico completo das modificações realizadas.

@@ -2,10 +2,12 @@
 draft: false
 slug: /introducao-ao-csharp/jogo-dados-v2
 tags:
-  - Aula 16
-  - "Introdução ao C#"
-  - Programação Estruturada
-  - Static
+  - trilha-programacao-estruturada
+  - tech-csharp
+  - conceito-static
+  - conceito-refatoracao
+  - projeto-jogo-dados
+  - material-projeto-incremental
 ---
 
 # Jogo dos Dados (Versão 2)

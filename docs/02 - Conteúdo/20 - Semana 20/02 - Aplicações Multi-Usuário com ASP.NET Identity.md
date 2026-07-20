@@ -2,11 +2,12 @@
 draft: false
 slug: /conteudo/aplicacoes-multi-usuario-identity
 tags:
-  - Aula 20
-  - Identity
-  - Multi-Usuário
-  - Segurança
-  - ASP.NET Core
+  - trilha-seguranca-web
+  - tech-aspnet-core-mvc
+  - conceito-autorizacao
+  - conceito-multiusuario
+  - conceito-seguranca
+  - material-aula-conceitual
 ---
 
 # Aplicações Multi-Usuário com ASP.NET Identity

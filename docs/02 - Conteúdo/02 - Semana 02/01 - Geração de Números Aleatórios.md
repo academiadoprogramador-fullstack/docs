@@ -2,9 +2,10 @@
 draft: false
 slug: /introducao-ao-csharp/geracao-de-numeros-aleatorios
 tags:
-  - Aula 06
-  - Introdução ao C#
-  - Randomização
+  - trilha-fundamentos-csharp
+  - tech-csharp
+  - conceito-randomizacao
+  - material-aula-conceitual
 ---
 
 Em C#, podemos gerar números aleatórios para criar jogos, sorteios,

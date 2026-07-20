@@ -1,10 +1,12 @@
 ---
 slug: /introducao-ao-csharp/pedra-papel-tesoura-v3
 tags:
-  - Aula 22
-  - Introdução ao C#
-  - Programação Estruturada
-  - Static
+  - trilha-programacao-estruturada
+  - tech-csharp
+  - conceito-static
+  - conceito-refatoracao
+  - projeto-pedra-papel-tesoura
+  - material-projeto-incremental
 ---
 
 Nesta versão 3, iremos evoluir ainda mais o jogo **Pedra, Papel e Tesoura**, organizando o código em **múltiplas classes com métodos estáticos**.

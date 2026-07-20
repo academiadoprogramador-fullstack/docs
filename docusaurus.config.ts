@@ -45,6 +45,8 @@ const config: Config = {
           sidebarPath: "./sidebars.ts",
           path: "docs",
           routeBasePath: "/",
+          tags: "tags.yml",
+          onInlineTags: "throw",
         },
         blog: false,
         theme: {
@@ -65,13 +67,18 @@ const config: Config = {
 
     // Replace with your project's social card
     image: "img/docusaurus-social-card.jpg",
-    navbar: {
-      title: "Academia do Programador Docs",
+      navbar: {
+        title: "Academia do Programador Docs",
       logo: {
         alt: "Academia do Programador",
         src: "img/logo.svg",
       },
-      items: [],
+       items: [
+         {
+           label: "Assuntos",
+           to: "/tags",
+         },
+       ],
     },
     sidebar: {
       hideable: false,

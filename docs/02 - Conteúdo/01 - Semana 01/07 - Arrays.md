@@ -2,9 +2,10 @@
 draft: false
 slug: /introducao-ao-csharp/arrays-simples
 tags:
-  - Aula 04
-  - "Introdução ao C#"
-  - Coleções
+  - trilha-fundamentos-csharp
+  - tech-csharp
+  - conceito-arrays
+  - material-aula-conceitual
 ---
 
 Em C#, um array é uma estrutura que permite armazenar vários valores do

@@ -1,8 +1,10 @@
 ---
 slug: /introducao-ao-csharp/pedra-papel-tesoura-v1
 tags:
-  - Aula 22
-  - Introdução ao C#
+  - trilha-programacao-estruturada
+  - tech-csharp
+  - projeto-pedra-papel-tesoura
+  - material-projeto-incremental
 ---
 
 Nesta atividade, iremos desenvolver o clássico jogo **Pedra, Papel e Tesoura** utilizando C#.

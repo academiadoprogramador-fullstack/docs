@@ -2,13 +2,13 @@
 draft: false
 slug: /introducao-ao-csharp/jogo-de-adivinhacao
 tags:
-  - Aula 06
-  - Introdução ao C#
-  - Tipos Primitivos
-  - I/O
-  - Estruturas de Decisão
-  - Estruturas de Repetição
-  - Randomização
+  - trilha-fundamentos-csharp
+  - tech-csharp
+  - conceito-randomizacao
+  - conceito-decisoes
+  - conceito-repeticoes
+  - projeto-jogo-adivinhacao
+  - material-projeto-incremental
 ---
 
 Neste projeto iremos construir um **jogo de adivinhação no console**,

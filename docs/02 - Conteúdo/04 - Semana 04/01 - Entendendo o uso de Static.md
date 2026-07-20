@@ -1,10 +1,10 @@
 ---
 slug: /introducao-ao-csharp/static
 tags:
-  - Aula 16
-  - Introdução ao C#
-  - Programação Estruturada
-  - Static
+  - trilha-programacao-estruturada
+  - tech-csharp
+  - conceito-static
+  - material-aula-conceitual
 ---
 
 Durante o desenvolvimento de programas em C#, principalmente no início do aprendizado, utilizamos uma abordagem **sequencial/estruturada**, onde o código é executado de cima para baixo.

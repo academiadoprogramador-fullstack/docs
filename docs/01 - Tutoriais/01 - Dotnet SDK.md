@@ -1,8 +1,9 @@
 ---
 slug: /tutoriais/dotnet-sdk
 tags:
-  - Tutoriais
-  - SDK
+  - trilha-ferramentas
+  - tech-dotnet
+  - material-tutorial
 ---
 
 O .NET SDK (Software Development Kit) é o conjunto de ferramentas que você instala na sua máquina para criar, compilar, testar e publicar aplicações .NET. Ele é diferente do .NET Runtime, que serve apenas para executar aplicações já compiladas.

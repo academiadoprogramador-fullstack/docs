@@ -1,9 +1,10 @@
 ---
 slug: /introducao-ao-csharp/robo-tupiniquim-v1
 tags:
-  - Aula 18
-  - Introdução ao C#
-  - Programação Estruturada
+  - trilha-programacao-estruturada
+  - tech-csharp
+  - projeto-robo-tupiniquim
+  - material-projeto-incremental
 ---
 
 Nesta atividade, iremos desenvolver o sistema de navegação do **Robô Tupiniquim I**, responsável por explorar um terreno em formato de grade (grid).

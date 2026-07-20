@@ -2,13 +2,12 @@
 draft: false
 slug: /introducao-ao-csharp/jogo-de-adivinhacao-v3
 tags:
-  - Aula 08
-  - Introdução ao C#
-  - Estruturas de Decisão
-  - Estruturas de Repetição
-  - Arrays
-  - Randomização
-  - Métodos
+  - trilha-programacao-estruturada
+  - tech-csharp
+  - conceito-metodos
+  - conceito-refatoracao
+  - projeto-jogo-adivinhacao
+  - material-projeto-incremental
 ---
 
 Neste tutorial, vamos aprender como transformar um código sequencial (onde tudo acontece um passo após o outro no mesmo bloco) em um código estruturado.

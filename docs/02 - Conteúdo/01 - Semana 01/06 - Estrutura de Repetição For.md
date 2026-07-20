@@ -2,9 +2,10 @@
 draft: false
 slug: /introducao-ao-csharp/estrutura-de-repeticao-for
 tags:
-  - Aula 04
-  - "Introdução ao C#"
-  - Estruturas de Repetição
+  - trilha-fundamentos-csharp
+  - tech-csharp
+  - conceito-repeticoes
+  - material-aula-conceitual
 ---
 
 Em C#, a estrutura de repetição `for` é utilizada quando sabemos

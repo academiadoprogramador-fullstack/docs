@@ -2,12 +2,13 @@
 draft: false
 slug: /introducao-ao-csharp/calculadora-v2
 tags:
-  - Aula 04
-  - Introdução ao C#
-  - Tipos Primitivos
-  - I/O
-  - Estruturas de Decisão
-  - Estruturas de Repetição
+  - trilha-fundamentos-csharp
+  - tech-csharp
+  - conceito-entrada-saida
+  - conceito-arrays
+  - conceito-repeticoes
+  - projeto-calculadora
+  - material-projeto-incremental
 ---
 
 ## Passo a passo
