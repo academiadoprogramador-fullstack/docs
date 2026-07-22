@@ -33,6 +33,11 @@ trilha-arquitetura-software:
   permalink: /arquitetura-de-software
   description: Conteúdos sobre camadas, organização de dependências e arquitetura de aplicações.
 
+trilha-testes:
+  label: Testes de Software
+  permalink: /testes-de-software
+  description: Conteúdos sobre testes automatizados e verificação do comportamento das aplicações.
+
 trilha-seguranca-web:
   label: Segurança Web
   permalink: /seguranca-web
@@ -52,6 +57,11 @@ tech-dotnet:
   label: .NET
   permalink: /dotnet
   description: Conteúdos sobre a plataforma .NET e seu SDK.
+
+tech-mstest:
+  label: MSTest
+  permalink: /mstest
+  description: Conteúdos sobre testes automatizados com o framework MSTest.
 
 tech-aspnet-core-mvc:
   label: ASP.NET Core MVC
@@ -298,6 +308,16 @@ conceito-dominio-casos-uso:
   permalink: /dominio-e-casos-de-uso
   description: Regras de negócio e casos de uso independentes de detalhes externos.
 
+conceito-testes-unitarios:
+  label: Testes Unitários
+  permalink: /testes-unitarios
+  description: Testes que verificam unidades pequenas e isoladas do sistema.
+
+conceito-testes-dominio:
+  label: Testes de Domínio
+  permalink: /testes-de-dominio
+  description: Verificação automatizada das regras e comportamentos das entidades de domínio.
+
 conceito-inversao-dependencia:
   label: Inversão de Dependência
   permalink: /inversao-de-dependencia
@@ -332,6 +352,11 @@ material-aula-conceitual:
   label: Aula Conceitual
   permalink: /aula-conceitual
   description: Explicações focadas na compreensão de um conceito.
+
+material-aula-pratica:
+  label: Aula Prática
+  permalink: /aula-pratica
+  description: Aulas com comandos, código e atividades práticas de desenvolvimento.
 
 material-projeto-incremental:
   label: Projeto Incremental
