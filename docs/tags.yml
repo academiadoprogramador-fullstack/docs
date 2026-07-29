@@ -63,6 +63,11 @@ tech-mstest:
   permalink: /mstest
   description: Conteúdos sobre testes automatizados com o framework MSTest.
 
+tech-moq:
+  label: Moq
+  permalink: /moq
+  description: Conteúdos sobre criação de mocks para testes unitários em .NET.
+
 tech-aspnet-core-mvc:
   label: ASP.NET Core MVC
   permalink: /aspnet-core-mvc
@@ -317,6 +322,11 @@ conceito-testes-dominio:
   label: Testes de Domínio
   permalink: /testes-de-dominio
   description: Verificação automatizada das regras e comportamentos das entidades de domínio.
+
+conceito-mocking:
+  label: Mocking
+  permalink: /mocking
+  description: Isolamento de dependências usando objetos simulados em testes automatizados.
 
 conceito-inversao-dependencia:
   label: Inversão de Dependência
