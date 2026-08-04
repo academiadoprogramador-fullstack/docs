@@ -63,6 +63,11 @@ tech-mstest:
   permalink: /mstest
   description: Conteúdos sobre testes automatizados com o framework MSTest.
 
+tech-playwright:
+  label: Playwright
+  permalink: /playwright
+  description: Conteúdos sobre automação e testes de aplicações web com Playwright.
+
 tech-moq:
   label: Moq
   permalink: /moq
@@ -317,6 +322,11 @@ conceito-testes-unitarios:
   label: Testes Unitários
   permalink: /testes-unitarios
   description: Testes que verificam unidades pequenas e isoladas do sistema.
+
+conceito-testes-e2e:
+  label: Testes E2E
+  permalink: /testes-e2e
+  description: Testes de ponta a ponta que verificam fluxos completos da aplicação.
 
 conceito-testes-dominio:
   label: Testes de Domínio
