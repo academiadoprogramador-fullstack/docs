@@ -118,6 +118,11 @@ tech-automapper:
   permalink: /automapper
   description: Conteúdos sobre mapeamento entre objetos.
 
+tech-docker:
+  label: Docker
+  permalink: /docker
+  description: Conteúdos sobre containers e ambientes de desenvolvimento reproduzíveis.
+
 conceito-entrada-saida:
   label: Entrada e Saída
   permalink: /entrada-e-saida
@@ -303,6 +308,16 @@ conceito-yaml:
   permalink: /yaml-e-workflows
   description: Estrutura de arquivos YAML usados em automações.
 
+conceito-containerizacao:
+  label: Containerização
+  permalink: /containerizacao
+  description: Empacotamento e execução isolada de serviços em containers.
+
+conceito-banco-de-dados:
+  label: Banco de Dados
+  permalink: /conceito-banco-de-dados
+  description: Conceitos de armazenamento e acesso a dados de aplicações.
+
 conceito-arquitetura-camadas:
   label: Arquitetura em Camadas
   permalink: /arquitetura-em-camadas
@@ -437,3 +452,8 @@ projeto-controle-medicamentos:
   label: "Projeto: Controle de Medicamentos"
   permalink: /projeto-controle-de-medicamentos
   description: Aplicação usada como referência nos conteúdos de entrega e arquitetura.
+
+projeto-delivery-app:
+  label: "Projeto: Delivery App"
+  permalink: /projeto-delivery-app
+  description: Projeto de aplicação de delivery desenvolvido ao longo do curso.
