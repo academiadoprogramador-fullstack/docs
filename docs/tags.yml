@@ -123,6 +123,11 @@ tech-docker:
   permalink: /docker
   description: Conteúdos sobre containers e ambientes de desenvolvimento reproduzíveis.
 
+tech-mediatr:
+  label: MediatR
+  permalink: /mediatr
+  description: Implementação do padrão Mediator para comunicação entre casos de uso em .NET.
+
 conceito-entrada-saida:
   label: Entrada e Saída
   permalink: /entrada-e-saida
@@ -312,6 +317,16 @@ conceito-containerizacao:
   label: Containerização
   permalink: /containerizacao
   description: Empacotamento e execução isolada de serviços em containers.
+
+conceito-cqrs:
+  label: CQRS
+  permalink: /cqrs
+  description: Separação de operações de leitura e escrita em casos de uso distintos.
+
+conceito-mediator:
+  label: Mediator
+  permalink: /mediator
+  description: Padrão que encaminha mensagens para o componente responsável por tratá-las.
 
 conceito-banco-de-dados:
   label: Banco de Dados
