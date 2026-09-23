@@ -228,6 +228,11 @@ conceito-mvc:
   permalink: /mvc
   description: Separação entre Models, Views e Controllers.
 
+conceito-web-apis:
+  label: Web APIs
+  permalink: /web-apis
+  description: Criação de interfaces HTTP para compartilhar dados e operações entre aplicações.
+
 conceito-layout:
   label: Layouts e ViewBag
   permalink: /layouts-e-viewbag
