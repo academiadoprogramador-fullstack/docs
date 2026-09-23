@@ -358,6 +358,11 @@ conceito-autenticacao:
   permalink: /autenticacao
   description: Identificação de usuários em aplicações web.
 
+conceito-jwt:
+  label: JWT
+  permalink: /jwt
+  description: Tokens assinados usados para autenticar requisições em aplicações web.
+
 conceito-autorizacao:
   label: Autorização
   permalink: /autorizacao
