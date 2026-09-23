@@ -24,9 +24,9 @@ if (resultadoCadastro.IsFailed)
 
 O cliente recebia o status **400 Bad Request**, mas não sabia qual campo precisava corrigir.
 
-Na branch [`v2` do e-Agenda](https://github.com/academiadoprogramador-fullstack/e-agenda-api-2026/tree/v2), a validação passa a identificar campos e tipos de erro. A API usa essas informações para devolver uma resposta mais útil.
+Na branch [`v2` do e-Agenda](https://github.com/academiadoprogramador-fullstack/e-agenda-api-2026/tree/v2), a validação passou a identificar campos e tipos de erro. A branch [`v3`](https://github.com/academiadoprogramador-fullstack/e-agenda-api-2026/tree/v3) amplia o tratamento de erros e adiciona o módulo de compromissos.
 
-Depois de compreender essa evolução, veremos como descrever as rotas da API e explorá-las com Swagger UI e Postman.
+Vamos acompanhar essa evolução e explorar as rotas da API com Swagger UI e Postman.
 
 ---
 
@@ -178,7 +178,7 @@ Nem toda falha deve ser apresentada como 400. Na `v2`, a extensão converte o ti
 | `Conflito` | E-mail já cadastrado | `409 Conflict`, com uma descrição |
 | `NaoEncontrado` | Buscar um contato inexistente | `404 Not Found`, com uma descrição |
 
-No caso de conflito, o código usa `controller.Problem(...)`:
+Na `v2`, o caso de conflito usava `controller.Problem(...)`:
 
 ```csharp
 return controller.Problem(
@@ -191,132 +191,221 @@ return controller.Problem(
 
 O campo `detail` explica o ocorrido. A propriedade `type` aponta para uma página sobre o status HTTP; no projeto, esses endereços ficam em `ProblemDetailsTypes`.
 
-Ao final, o Controller só precisa traduzir o resultado da operação:
+Na `v3`, `ResultExtensions` cria um `ProblemDetails`, adiciona o `traceId` e devolve `controller.StatusCode(statusCode, problemDetails)`. O cliente continua recebendo o status apropriado e uma descrição da falha.
+
+Na `v2`, o Controller chamava `this.ValidationProblem(resultadoCadastro)`. Na `v3`, a extensão do projeto passa a se chamar `ProblemDetails`:
 
 ```csharp
 var resultadoCadastro = servicoContato.Cadastrar(dto);
 
 if (resultadoCadastro.IsFailed)
-    return this.ValidationProblem(resultadoCadastro);
+    return this.ProblemDetails(resultadoCadastro);
 ```
 
-`this.ValidationProblem(resultadoCadastro)` chama a **extensão do projeto**. Ela não deve ser confundida com `ControllerBase.ValidationProblem(ValidationProblemDetails)`, usado dentro da própria extensão.
+`this.ProblemDetails(resultadoCadastro)` chama a **extensão do projeto** em `ResultExtensions.cs`. Ela cria o resultado HTTP conforme o tipo da falha. Para erros de validação, a extensão ainda usa `controller.ValidationProblem(problemDetails)` internamente.
 
 ---
 
-## Por que documentar as rotas?
+## Finalizando a configuração global do ProblemDetails
 
-Para usar uma API, outro desenvolvedor precisa saber:
+Os erros de validação e conflito vêm do Service e são convertidos pelo Controller. Mas uma exceção inesperada pode ocorrer antes que ele produza uma resposta.
 
-- qual método HTTP e qual endereço chamar;
-- quais dados enviar;
-- quais respostas esperar;
-- o que significam as falhas.
-
-Na branch `v2`, o Controller define as rotas de contatos com atributos como `[HttpGet]`, `[HttpPost]` e `[HttpPut("{id:guid}")]`. O projeto também inclui `Contatos.http`, útil para executar requisições manualmente.
-
-Porém, o `Program.cs` dessa branch **ainda não configura a geração de um documento OpenAPI nem uma interface Swagger UI**. O arquivo `.http` ajuda a testar as rotas, mas não gera uma documentação navegável automaticamente.
-
-**OpenAPI** é um formato para descrever rotas, parâmetros e respostas de uma API. **Swagger UI** é uma interface que pode apresentar esse documento no navegador. **Postman** é um cliente para organizar e executar requisições; ele também pode importar um documento OpenAPI.
-
----
-
-## Adicionando OpenAPI e Swagger UI ao projeto
-
-Esta etapa é uma **evolução proposta** para o e-Agenda `v2`; o código a seguir não está presente na branch de referência.
-
-Com .NET 10, adicione ao projeto Web API os pacotes para gerar o documento e apresentar a interface:
-
-```bash
-dotnet add src/eAgenda.WebApi/eAgenda.WebApi.csproj package Microsoft.AspNetCore.OpenApi
-dotnet add src/eAgenda.WebApi/eAgenda.WebApi.csproj package Swashbuckle.AspNetCore.SwaggerUi
-```
-
-No `Program.cs`, mantenha o registro dos repositórios, dos Services, dos Controllers e as outras configurações já existentes. Acrescente apenas as linhas destacadas abaixo nos lugares indicados:
+Na `v3`, o `Program.cs` também registra o serviço de ProblemDetails e configura um tratamento global:
 
 ```csharp
-// Antes de builder.Build(), junto dos demais registros:
-builder.Services.AddControllers();
+builder.Services.AddProblemDetails(options =>
+{
+    options.CustomizeProblemDetails = context =>
+    {
+        string? type = ProblemDetailsTypes.ObterPorStatus(context.ProblemDetails.Status);
+
+        if (type is not null)
+            context.ProblemDetails.Type = type;
+
+        context.ProblemDetails.Extensions["traceId"] =
+            Activity.Current?.Id ?? context.HttpContext.TraceIdentifier;
+    };
+});
+
+// Depois de builder.Build():
+app.UseExceptionHandler();
+```
+
+`UseExceptionHandler()` intercepta exceções não tratadas. Com `AddProblemDetails()`, a aplicação pode devolver uma resposta de erro estruturada em vez de expor uma página de falha.
+
+`CustomizeProblemDetails` acrescenta o endereço de referência do status em `type` e um `traceId`: um identificador que ajuda a localizar a requisição durante a investigação do erro.
+
+`ProblemDetailsTypes.ObterPorStatus` associa os códigos 400, 404, 409 e 500 às páginas correspondentes da documentação HTTP. Para outros códigos, ele retorna `null`.
+
+> **Atenção:** o tratamento global de exceções não substitui o resultado produzido pelo Controller para regras de negócio. Na `v3`, `ResultExtensions.ProblemDetails` também adiciona o `traceId` aos problemas montados diretamente a partir dos resultados dos Services.
+
+Uma falha de validação esperada continua sendo **400**. Um e-mail duplicado continua sendo **409**. Já uma exceção inesperada pode produzir **500 Internal Server Error**.
+
+---
+
+## Módulo de Compromissos na Web API
+
+A `v3` acrescenta `CompromissosController`, com a rota base `api/compromissos`. Ele recebe requests, chama `ServicoCompromisso` e transforma os resultados em respostas HTTP, como já acontece com contatos.
+
+| Requisição | Operação | Resposta de sucesso |
+|---|---|---|
+| `GET /api/compromissos` | Listar | `200 OK` |
+| `GET /api/compromissos/{id}` | Selecionar | `200 OK` |
+| `POST /api/compromissos` | Cadastrar | `201 Created` |
+| `PUT /api/compromissos/{id}` | Editar | `204 No Content` |
+| `DELETE /api/compromissos/{id}` | Excluir | `204 No Content` |
+
+O request de cadastro recebe, entre outros dados, assunto, data, horário, tipo e um contato opcional:
+
+```csharp
+public record CadastrarCompromissoRequest(
+    string Assunto,
+    DateTime DataOcorrencia,
+    TimeSpan HoraInicio,
+    TimeSpan HoraTermino,
+    TipoCompromisso Tipo,
+    string? Local,
+    string? Link,
+    Guid? ContatoId
+);
+```
+
+`TipoCompromisso` é um `enum` com os valores `Presencial` e `Remoto`. O `Program.cs` registra `JsonStringEnumConverter`, permitindo enviar o tipo como texto no JSON.
+
+Por exemplo, para cadastrar um compromisso remoto sem contato associado:
+
+```json
+{
+  "assunto": "Reunião de planejamento",
+  "dataOcorrencia": "2026-10-15T00:00:00",
+  "horaInicio": "09:00:00",
+  "horaTermino": "10:00:00",
+  "tipo": "Remoto",
+  "local": null,
+  "link": "https://exemplo.com/reuniao",
+  "contatoId": null
+}
+```
+
+A entidade exige `Local` para compromissos presenciais e `Link` para remotos. O Service verifica se o contato informado existe e se há conflito de horário. Assim, um `ContatoId` inválido pode gerar **400** e um compromisso no mesmo intervalo pode gerar **409**.
+
+Na Action de cadastro, o Controller converte o request em DTO e consulta o Service. Observe o trecho que transforma o resultado em resposta:
+
+```csharp
+var resultadoCadastro = servico.Cadastrar(dto);
+
+if (resultadoCadastro.IsFailed)
+    return this.ProblemDetails(resultadoCadastro);
+
+Guid id = resultadoCadastro.Value;
+var resultadoSelecao = servico.SelecionarPorId(id);
+
+if (resultadoSelecao.IsFailed)
+    return this.ProblemDetails(resultadoSelecao);
+
+return CreatedAtAction(nameof(SelecionarPorId), new { id }, resultadoSelecao.Value);
+```
+
+`CreatedAtAction` devolve **201 Created**, o compromisso criado e o endereço para consultá-lo. As demais Actions usam a mesma extensão para traduzir falhas de validação, conflito ou recurso não encontrado.
+
+---
+
+## Documentando rotas com OpenAPI e Swagger
+
+Para consumir a API, outra pessoa precisa conhecer as rotas, os dados de entrada e as respostas possíveis.
+
+**OpenAPI** é o formato do documento que descreve a API. **Swagger UI** apresenta as rotas em uma página interativa. Na `v3`, os pacotes `Microsoft.AspNetCore.OpenApi` e `Swashbuckle.AspNetCore` já estão no projeto.
+
+O `Program.cs` registra os geradores e publica suas rotas:
+
+```csharp
 builder.Services.AddOpenApi();
+builder.Services.AddSwaggerGen();
 
-var app = builder.Build();
-
-// Mantenha a configuração do banco já existente no bloco de Development.
+// Depois de builder.Build():
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
-    app.UseSwaggerUI(options =>
-        options.SwaggerEndpoint("/openapi/v1.json", "e-Agenda v1"));
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+app.MapOpenApi();
 app.MapControllers();
-app.Run();
 ```
 
-`AddOpenApi()` prepara a geração do documento. `MapOpenApi()` publica o JSON em `/openapi/v1.json`; `UseSwaggerUI(...)` oferece a interface em `/swagger`.
+Aqui existem **dois documentos**: `MapOpenApi()` publica `/openapi/v1.json`, enquanto `UseSwagger()` publica `/swagger/v1/swagger.json`. No ambiente de desenvolvimento, `UseSwaggerUI()` disponibiliza a interface em `/swagger` usando o documento do Swagger.
 
-> O bloco acima mostra onde inserir as novas chamadas. Ao editar o arquivo real, **preserve** os registros e a migração do banco existentes no `Program.cs` da `v2`.
+Observe que, nesse código, `MapOpenApi()` está **fora** do bloco de desenvolvimento. Portanto, o endpoint `/openapi/v1.json` também fica mapeado em outros ambientes; a interface Swagger UI e o documento gerado por `UseSwagger()` ficam no bloco de desenvolvimento.
 
-Após configurar a conexão com o SQL Server e iniciar a API, abra `https://localhost:7098/swagger` ou `https://localhost:7098/openapi/v1.json` no ambiente de desenvolvimento.
-
-Documentar os **status possíveis** de cada Action também é importante. Atributos como `[ProducesResponseType]` podem informar aos leitores do OpenAPI que o cadastro pode responder com `201`, `400` ou `409`. Esses atributos descrevem respostas: a lógica do Controller e do Service continua responsável por produzi-las.
-
-Por exemplo, acima da assinatura da Action `Cadastrar`, poderíamos acrescentar estes atributos:
+O Controller de Compromissos também descreve respostas de algumas Actions com atributos. Por exemplo:
 
 ```csharp
-[ProducesResponseType(typeof(DetalhesContatoDto), StatusCodes.Status201Created)]
-[ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
-[ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status409Conflict)]
+[HttpPost]
+[ProducesResponseType<DetalhesCompromissoDto>(StatusCodes.Status201Created)]
+[ProducesResponseType(StatusCodes.Status400BadRequest)]
+[ProducesResponseType(StatusCodes.Status404NotFound)]
+[ProducesResponseType(StatusCodes.Status409Conflict)]
 ```
 
-Este trecho é uma sugestão para documentar a `v2`. Adicione os atributos antes do `[HttpPost]` existente, sem alterar a implementação do cadastro.
+Esses atributos ajudam a documentar as respostas do cadastro. Quem produz os status de fato continua sendo o Controller com o Service.
+
+Após configurar a conexão com o SQL Server, inicie a API:
+
+```bash
+dotnet run --project src/eAgenda.WebApi
+```
+
+Com o perfil HTTPS do projeto, abra `https://localhost:7098/swagger` para explorar as rotas de contatos e compromissos. O documento JSON também pode ser consultado em `https://localhost:7098/openapi/v1.json`.
 
 ---
 
 ## Explorando e compartilhando as rotas com Postman
 
-O Postman permite criar requisições para a API e salvá-las em uma **collection**, ou coleção. Uma coleção reúne as operações que outras pessoas precisam conhecer.
+O **Postman** é um cliente HTTP que permite salvar requisições em uma *collection*, ou coleção. Podemos usar o documento OpenAPI da `v3` para começar essa coleção:
 
-Podemos começar mesmo sem OpenAPI:
+1. Com a API em execução, abra a opção de importação do Postman.
+2. Informe `https://localhost:7098/openapi/v1.json` ou importe o JSON obtido nesse endereço.
+3. Gere uma coleção e configure a URL local usada para enviar as requisições.
+4. Envie `GET /api/compromissos` para conferir a listagem.
+5. Envie `POST /api/compromissos` com o JSON do exemplo anterior e observe o status `201 Created`.
+6. Teste um horário conflitante e confira o status `409 Conflict` e o campo `detail`.
 
-1. Crie uma coleção chamada `e-Agenda - Contatos`.
-2. Adicione uma requisição `GET https://localhost:7098/api/contatos`.
-3. Adicione uma requisição `POST https://localhost:7098/api/contatos` com corpo JSON e `Content-Type: application/json`.
-4. Descreva na coleção as respostas `201 Created`, `400 Bad Request` e `409 Conflict` do cadastro.
-5. Execute um cadastro com e-mail repetido e examine o corpo `ProblemDetails` recebido.
+Também é possível criar as requisições manualmente no Postman. Nesse caso, informe o método HTTP, a URL, o corpo JSON e o cabeçalho `Content-Type: application/json`.
 
-Se você tiver adicionado OpenAPI conforme a seção anterior, pode importar no Postman o endereço `https://localhost:7098/openapi/v1.json` e gerar uma coleção a partir das rotas descritas. Depois, confira as URLs e complete as descrições e exemplos necessários.
-
-O Swagger UI apresenta a documentação gerada; o Postman ajuda a manter e compartilhar requisições de uso da API. Nenhum dos dois substitui as regras implementadas nos Controllers e Services.
+O Swagger UI facilita a descoberta das rotas. O Postman ajuda a organizar e compartilhar os exemplos de uso. Nenhum deles substitui as regras implementadas na aplicação.
 
 ---
 
-## Exercício: observando os três tipos de erro
+## Exercício: documentando e testando compromissos
 
-Com a API `v2` em execução, use `Contatos.http`, Swagger UI após a configuração proposta ou um cliente como Postman:
+Com a API `v3` em execução, use o Swagger UI ou o Postman:
 
-1. Envie um cadastro com `nome` igual a `"A"` e telefone fora do formato esperado. Mantenha os demais dados válidos e únicos. Observe os erros separados por campo na resposta 400.
-2. Cadastre um contato válido e repita o cadastro com o mesmo e-mail. Observe o status 409 e a mensagem em `detail`.
-3. Consulte `GET /api/contatos/{id}` com um `Guid` inexistente. Observe o status 404.
-4. Identifique em cada caso qual camada descobriu o problema e qual camada produziu a resposta HTTP.
+1. Localize `POST /api/compromissos` e observe os dados esperados no request.
+2. Cadastre um compromisso remoto válido com `contatoId` igual a `null`.
+3. Envie outro compromisso no mesmo dia e horário. Compare a resposta **409** com a resposta de sucesso.
+4. Tente cadastrar um compromisso presencial sem `local`. Observe o erro por campo na resposta **400**.
+5. Consulte um `id` inexistente em `GET /api/compromissos/{id}` e observe a resposta **404**.
+6. Identifique o `traceId` em uma das respostas de erro.
 
-Repare que `Contatos.http` na `v2` contém exemplos para as operações usuais. Para os casos inválidos, edite os dados da requisição ou crie requisições adicionais no seu cliente HTTP.
+Em cada cenário, compare o status observado com as respostas declaradas no Controller. Depois, localize no Service ou na entidade a regra que produziu a falha.
 
 ---
 
 ## Conclusão
 
-Na `v2` do e-Agenda, a validação da entidade passa a devolver **campo e mensagem**. O Service preserva esses dados e classifica a falha. A Web API transforma o resultado em `ProblemDetails` com status e informações úteis para o cliente.
+Na `v2` do e-Agenda, a validação da entidade passou a devolver **campo e mensagem**. A `v3` mantém esse caminho e configura o tratamento global de erros inesperados com `AddProblemDetails` e `UseExceptionHandler`.
 
-Para que outras pessoas descubram as rotas e saibam como usá-las, podemos complementar os exemplos `.http` com um documento OpenAPI, apresentá-lo no Swagger UI e organizar requisições no Postman.
+O módulo de Compromissos mostra como reutilizar essas respostas em novos endpoints. O projeto também publica documentos OpenAPI, oferece Swagger UI em desenvolvimento e permite importar suas rotas no Postman.
 
 Referências:
 
 - [Introdução às Web APIs com ASP.NET Core](/conteudo/introducao-web-apis-aspnet-core);
 - [Projeto e-Agenda API na branch `v2`](https://github.com/academiadoprogramador-fullstack/e-agenda-api-2026/tree/v2);
+- [Projeto e-Agenda API na branch `v3`](https://github.com/academiadoprogramador-fullstack/e-agenda-api-2026/tree/v3);
 - [`Contato.cs` e validação da entidade](https://github.com/academiadoprogramador-fullstack/e-agenda-api-2026/blob/v2/src/eAgenda.Dominio/Modulos/ModuloContato/Contato.cs);
 - [`ServicoBase.cs` e classificação de erros](https://github.com/academiadoprogramador-fullstack/e-agenda-api-2026/blob/v2/src/eAgenda.Aplicacao/Compartilhado/ServicoBase.cs);
-- [`ResultExtensions.cs` e ProblemDetails](https://github.com/academiadoprogramador-fullstack/e-agenda-api-2026/blob/v2/src/eAgenda.WebApi/Compartilhado/ResultExtensions.cs);
+- [`Program.cs` e configuração global](https://github.com/academiadoprogramador-fullstack/e-agenda-api-2026/blob/v3/src/eAgenda.WebApi/Program.cs);
+- [`ResultExtensions.cs` e ProblemDetails](https://github.com/academiadoprogramador-fullstack/e-agenda-api-2026/blob/v3/src/eAgenda.WebApi/Compartilhado/ResultExtensions.cs);
+- [`CompromissosController.cs`](https://github.com/academiadoprogramador-fullstack/e-agenda-api-2026/blob/v3/src/eAgenda.WebApi/Features/Compromissos/CompromissosController.cs);
 - [Documentação da Microsoft sobre respostas de erro em APIs](https://learn.microsoft.com/aspnet/core/fundamentals/error-handling-api);
 - [Documentação da Microsoft sobre OpenAPI no ASP.NET Core](https://learn.microsoft.com/aspnet/core/fundamentals/openapi/overview).
