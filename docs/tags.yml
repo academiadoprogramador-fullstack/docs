@@ -328,6 +328,16 @@ conceito-mediator:
   permalink: /mediator
   description: Padrão que encaminha mensagens para o componente responsável por tratá-las.
 
+conceito-seeding:
+  label: Seeding
+  permalink: /seeding
+  description: Inserção de dados iniciais necessários para o funcionamento da aplicação.
+
+conceito-migrations:
+  label: Migrations
+  permalink: /migrations
+  description: Versionamento e aplicação de alterações na estrutura do banco de dados.
+
 conceito-banco-de-dados:
   label: Banco de Dados
   permalink: /conceito-banco-de-dados
