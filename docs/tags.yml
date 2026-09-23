@@ -328,6 +328,11 @@ conceito-testes-e2e:
   permalink: /testes-e2e
   description: Testes de ponta a ponta que verificam fluxos completos da aplicação.
 
+conceito-page-objects:
+  label: Page Objects
+  permalink: /page-objects
+  description: Organização das interações com páginas em testes E2E.
+
 conceito-testes-dominio:
   label: Testes de Domínio
   permalink: /testes-de-dominio
