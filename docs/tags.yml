@@ -128,6 +128,16 @@ tech-mediatr:
   permalink: /mediatr
   description: Implementação do padrão Mediator para comunicação entre casos de uso em .NET.
 
+tech-masstransit:
+  label: MassTransit
+  permalink: /masstransit
+  description: Biblioteca .NET para integração com message brokers e mensageria.
+
+tech-rabbitmq:
+  label: RabbitMQ
+  permalink: /rabbitmq
+  description: Message broker para comunicação assíncrona entre aplicações.
+
 conceito-entrada-saida:
   label: Entrada e Saída
   permalink: /entrada-e-saida
@@ -338,6 +348,21 @@ conceito-migrations:
   permalink: /migrations
   description: Versionamento e aplicação de alterações na estrutura do banco de dados.
 
+conceito-mensageria:
+  label: Mensageria
+  permalink: /mensageria
+  description: Comunicação assíncrona entre componentes por meio de mensagens.
+
+conceito-message-broker:
+  label: Message Broker
+  permalink: /message-broker
+  description: Serviço responsável por receber, armazenar e encaminhar mensagens.
+
+conceito-produtor-consumidor:
+  label: Produtor e Consumidor
+  permalink: /produtor-e-consumidor
+  description: Componentes que publicam e processam mensagens em um sistema de mensageria.
+
 conceito-banco-de-dados:
   label: Banco de Dados
   permalink: /conceito-banco-de-dados
@@ -482,3 +507,8 @@ projeto-delivery-app:
   label: "Projeto: Delivery App"
   permalink: /projeto-delivery-app
   description: Projeto de aplicação de delivery desenvolvido ao longo do curso.
+
+projeto-message-broker:
+  label: "Projeto: Message Broker"
+  permalink: /projeto-message-broker
+  description: Exemplo didático de mensageria com MassTransit e RabbitMQ.
