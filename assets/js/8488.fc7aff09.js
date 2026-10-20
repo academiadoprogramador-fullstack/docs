@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkacademia_do_programador_docs=self.webpackChunkacademia_do_programador_docs||[]).push([[8488],{8488:(a,e,r)=>{r.d(e,{createArchitectureServices:()=>c.S});var c=r(89221);r(51400)}}]);

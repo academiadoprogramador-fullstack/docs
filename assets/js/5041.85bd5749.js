@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkacademia_do_programador_docs=globalThis.webpackChunkacademia_do_programador_docs||[]).push([[5041],{95041:(a,e,o)=>{o.d(e,{createEventModelingServices:()=>d.g});var d=o(76737);o(51400)}}]);
