@@ -138,6 +138,21 @@ tech-rabbitmq:
   permalink: /rabbitmq
   description: Message broker para comunicação assíncrona entre aplicações.
 
+tech-nodejs:
+  label: Node.js
+  permalink: /nodejs
+  description: Ambiente de execução JavaScript usado no servidor e em ferramentas de desenvolvimento.
+
+tech-npm:
+  label: npm
+  permalink: /npm
+  description: Gerenciador de pacotes utilizado para instalar dependências JavaScript.
+
+tech-angular:
+  label: Angular
+  permalink: /angular
+  description: Framework para criação de aplicações web com TypeScript.
+
 conceito-entrada-saida:
   label: Entrada e Saída
   permalink: /entrada-e-saida
@@ -242,6 +257,11 @@ conceito-servidor-web:
   label: Servidor Web
   permalink: /servidor-web
   description: Fundamentos de servidores web, HTTP e aplicações web.
+
+conceito-componentes:
+  label: Componentes
+  permalink: /componentes
+  description: Partes reutilizáveis que organizam a interface de uma aplicação Angular.
 
 conceito-mvc:
   label: MVC
