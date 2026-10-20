@@ -153,6 +153,16 @@ tech-angular:
   permalink: /angular
   description: Framework para criação de aplicações web com TypeScript.
 
+tech-bootstrap:
+  label: Bootstrap
+  permalink: /bootstrap
+  description: Framework de estilos para criação de interfaces web responsivas.
+
+tech-scss:
+  label: SCSS
+  permalink: /scss
+  description: Sintaxe do Sass que adiciona recursos como variáveis e aninhamento ao CSS.
+
 conceito-entrada-saida:
   label: Entrada e Saída
   permalink: /entrada-e-saida
