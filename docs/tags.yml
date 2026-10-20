@@ -153,6 +153,11 @@ tech-angular:
   permalink: /angular
   description: Framework para criação de aplicações web com TypeScript.
 
+tech-pokeapi:
+  label: PokéAPI
+  permalink: /pokeapi
+  description: API pública que fornece dados sobre Pokémon e outros recursos da franquia.
+
 tech-bootstrap:
   label: Bootstrap
   permalink: /bootstrap
