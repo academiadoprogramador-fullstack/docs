@@ -168,6 +168,16 @@ tech-scss:
   permalink: /scss
   description: Sintaxe do Sass que adiciona recursos como variáveis e aninhamento ao CSS.
 
+tech-tailwindcss:
+  label: Tailwind CSS
+  permalink: /tailwind-css
+  description: Framework CSS baseado em classes utilitárias para compor interfaces.
+
+tech-lucide:
+  label: Lucide Angular
+  permalink: /lucide-angular
+  description: Biblioteca de ícones SVG utilizada em aplicações Angular.
+
 conceito-entrada-saida:
   label: Entrada e Saída
   permalink: /entrada-e-saida
@@ -462,6 +472,11 @@ conceito-jwt:
   label: JWT
   permalink: /jwt
   description: Tokens assinados usados para autenticar requisições em aplicações web.
+
+conceito-cors:
+  label: CORS
+  permalink: /cors
+  description: Política que controla quais origens podem acessar uma API pelo navegador.
 
 conceito-autorizacao:
   label: Autorização
