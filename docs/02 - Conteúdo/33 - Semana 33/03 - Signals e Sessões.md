@@ -1,6 +1,6 @@
 ---
 draft: false
-slug: /conteudo/signals-sessoes-modulo-cursos
+slug: /conteudo/signals-e-sessoes
 tags:
   - trilha-programacao-web
   - trilha-seguranca-web
@@ -13,17 +13,16 @@ tags:
   - material-aula-pratica
 ---
 
-# Signals, Sessões e Módulo de Cursos
+# Signals e Sessões
 
 ## Evoluindo o Gerador de Certificados
 
 Na aula anterior, conectamos os formulários de cadastro e login à API e vimos como a sessão fica em memória.
 
-No Gerador de Certificados, o projeto avança em três frentes:
+No Gerador de Certificados, vamos avançar em duas frentes:
 
 - exibe erros da API nas telas de autenticação;
-- persiste a sessão no navegador;
-- associa cursos e certificados ao usuário autenticado.
+- persiste a sessão no navegador.
 
 ## Apresentando erros da API com Signals
 
@@ -189,86 +188,10 @@ Isso é importante porque manter um token no armazenamento não estende a valida
 
 > **Atenção:** scripts executados na página podem ler o `localStorage`. Uma vulnerabilidade de XSS pode expor o token. Proteja a aplicação contra XSS e avalie a estratégia de armazenamento adequada ao contexto; cookies `HttpOnly`, `Secure` e `SameSite` exigem configuração coordenada com o backend.
 
-## O módulo de cursos na API
-
-O módulo de cursos possui endpoints de cadastro, listagem e consulta por identificador:
-
-| Método | Rota | Resultado |
-| --- | --- | --- |
-| `POST` | `/cursos` | Cria um curso e responde `201 Created`. |
-| `GET` | `/cursos` | Lista os cursos do usuário autenticado. |
-| `GET` | `/cursos/{cursoId}` | Consulta um curso pertencente ao usuário autenticado. |
-
-Um curso contém nome, carga horária e data de conclusão.
-
-O cadastro valida os dados no domínio antes de persistir e retorna um `CursoDto`.
-
-A listagem ordena os resultados por nome e usa o identificador como critério secundário:
-
-```csharp
-return await db.Cursos
-    .AsNoTracking()
-    .Where(curso => curso.UsuarioId == usuarioId)
-    .OrderBy(curso => curso.Nome)
-    .ThenBy(curso => curso.Id)
-    .ToListAsync(cancellationToken);
-```
-
-Se o usuário autenticado ainda não tiver cursos, a API retorna uma lista vazia (`[]`).
-
-## Isolando os dados por usuário
-
-Uma lista de cursos não pode retornar registros de outras instituições.
-
-Por isso, as operações protegidas obtêm o identificador do usuário a partir da identidade autenticada no token:
-
-```csharp
-private Guid ObterUsuarioId()
-{
-    return Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
-}
-```
-
-O Controller passa esse identificador para os casos de uso.
-
-O repositório usa o par curso/usuário para buscar ou verificar a existência de um curso. Conhecer um `cursoId` de outra conta não deve dar acesso ao registro.
-
-O mesmo princípio foi aplicado aos certificados: cadastro, listagem, processamento, consulta de status e download consideram o usuário autenticado. Os certificados também recebem `UsuarioId`.
-
-Uma migration adiciona `UsuarioId` às tabelas `Cursos` e `Certificados`, cria índices e relacionamentos com `AspNetUsers`.
-
-> Autenticação identifica quem fez a chamada. O filtro por `UsuarioId` é o que limita os dados retornados a essa identidade.
-
-## O que ainda não existe no client?
-
-Embora a API permita criar, listar e consultar cursos, ainda não há telas Angular para essas operações.
-
-A página inicial apresenta a proposta do produto, mas não contém um formulário de curso nem uma listagem conectada à API.
-
-O README também indica que a integração do client às operações de cursos será desenvolvida depois.
-
-Portanto, nesta etapa, podemos testar o módulo pelo Swagger ou pelas requisições de exemplo em `server/src/Api/GeradorCertificadosOnline.Api.http`.
-
-As rotas de cursos exigem um token Bearer. Sem token, a API responde `401 Unauthorized`.
-
-## Testando as operações de curso
-
-Com a API e as dependências configuradas, o arquivo de requisições HTTP mostra o fluxo completo:
-
-1. Cadastre um usuário e faça login para obter um token.
-2. Envie `GET /cursos` com o Bearer token; sem cursos, a resposta deve ser `[]`.
-3. Envie `POST /cursos` com nome, carga horária e data de conclusão.
-4. Consulte o identificador retornado em `GET /cursos/{cursoId}`.
-5. Faça login com outro usuário e confirme que os cursos da primeira conta não aparecem.
-
-O arquivo também exemplifica respostas `400`, `401`, `404`, `409` e `202` para validações e operações relacionadas à geração dos certificados.
-
 ## Conclusão
 
 Signals permitem que os formulários representem mensagens de sucesso, erros da API e o estado de envio.
 
 O `AuthService` mantém esse estado reativo e usa `localStorage` para recuperar a sessão, validando os dados e a expiração do token.
 
-No backend, o módulo de cursos passa a listar e consultar dados no contexto do usuário autenticado. O mesmo isolamento é aplicado às operações de certificados.
-
-O próximo passo do client será criar as telas que consumirão essas operações de cursos.
+Assim, as telas de autenticação podem informar o resultado das requisições e a sessão pode continuar disponível após recarregar a aplicação.
